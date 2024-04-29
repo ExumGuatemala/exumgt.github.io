@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>W3.CSS Template</title>
+<title>Exum Guatemala - Asesoria Tecnológica</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -9,79 +9,120 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
+.exum-background-gray {background-color: rgb(101,101,101);}
+.exum-background-yellow {background-color: rgb(250,223,75);}
+
+.header-cta {
+  background-color: rgb(250,223,75);
+  color: black;
+}
+
+.content-cta {
+  background-color: rgb(101,101,101);
+  color: white;
+}
 </style>
 </head>
 <body>
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+  <div class="w3-bar w3-card w3-left-align w3-large exum-background-yellow">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-large exum-background-yellow" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#home" class="w3-bar-item w3-button w3-padding-large exum-background-yellow">Inicio</a>
+    <a href="#asesoria" class="w3-bar-item w3-button w3-hide-small w3-padding-large">Asesoria en Tecnología</a>
+    <a href="#grupos" class="w3-bar-item w3-button w3-hide-small w3-padding-large">Mentorías Grupales</a>
+    <a href="#individual" class="w3-bar-item w3-button w3-hide-small w3-padding-large">Mentorías Individuales</a>
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-large exum-background-yellow">
+    <a href="#asesoria" class="w3-bar-item w3-button w3-padding-large">Asesoria en Tecnología</a>
+    <a href="#grupos" class="w3-bar-item w3-button w3-padding-large">Mentorías Grupales</a>
+    <a href="#individual" class="w3-bar-item w3-button w3-padding-large">Mentorías Individuales</a>
   </div>
 </div>
 
 <!-- Header -->
-<header class="w3-container w3-red w3-center" style="padding:128px 16px">
-  <h1 class="w3-margin w3-jumbo">START PAGE</h1>
-  <p class="w3-xlarge">Template by w3.css</p>
-  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
+<header id="home" class="w3-container w3-center exum-background-gray" style="padding:128px 16px; color: white;">
+  <p class="w3-xlarge">Exum Education</p>
+  <h1 class="w3-margin w3-jumbo">Te mostramos la mejor ruta para tu negocio en el mundo digital</h1>
+  <p class="w3-xlarge">Un experto te ayudara a tomar las mejores decisiones sobre que productos tecnologicos usar, como, cuando y donde hacerlo.</p>
+  <button class="w3-button w3-padding-large w3-large w3-margin-top header-cta">Quiero agendar una cita!</button>
 </header>
 
 <!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
+<div id="asesoria" class="w3-row-padding w3-padding-32 w3-container">
   <div class="w3-content">
     <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+      <h1>Asesoria en Tecnología</h1>
+      <h5 class="w3-padding-16">
+        Respondemos tus preguntas, creamos o mejoramos tus procesos, te ayudamos a tomar decisiones. 
+      </h5>
 
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p class="w3-text-grey">Nuestro equipo especializado está aquí para guiarte en el mundo de la tecnología. 
+        Desde la selección del software adecuado hasta la optimización de tus procesos de manejo de datos, 
+        estamos comprometidos a ayudarte a tomar decisiones informadas y cumplir las metas de tu negocio.</p>
     </div>
 
-    <div class="w3-third w3-center">
-      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+    <div class="w3-third w3-center w3-margin-top">
+      <img style="width: 80%; " src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4" />
     </div>
   </div>
 </div>
+<div class="w3-row-padding w3-padding-16 w3-container w3-center">
+  <button class="w3-button w3-padding-large w3-large content-cta">Tengo preguntas!</button>
+</div>
+
 
 <!-- Second Grid -->
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+<div id="grupos" class="w3-row-padding w3-light-grey w3-padding-32 w3-container">
   <div class="w3-content">
-    <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+    <div class="w3-third w3-center w3-margin-top">
+      <img style="width: 80%; " src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655" />
     </div>
 
     <div class="w3-twothird">
-      <h1>Lorem Ipsum</h1>
-      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+      <h1>Mentorías Grupales</h1>
+      <h5 class="w3-padding-32">¿Estás listo para triunfar en tu examen final de Ingeniería en Sistemas? ¡Prepárate con nuestras clases privadas!</h5>
 
-      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p class="w3-text-grey">Nuestras clases privadas están diseñadas para brindarte el apoyo y la preparación que necesitas para alcanzar el éxito 
+        en tu examen final de Ingeniería en Sistemas. Con nuestros experimentados mentores, obtendrás la orientación y el conocimiento que te llevarán 
+        al siguiente nivel académico.</p>
     </div>
   </div>
 </div>
-
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+<div class="w3-row-padding w3-padding-16 w3-light-grey w3-container w3-center">
+  <button class="w3-button w3-padding-large w3-large content-cta">Quiero triunfar!</button>
 </div>
+
+<!-- Third Grid -->
+<div id="individual" class="w3-row-padding w3-padding-32 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Mentorías Individuales</h1>
+      <h5 class="w3-padding-16">
+        ¿Listo para dar el salto en tu carrera en IT? ¡Accede a mentorías personalizadas y conquista el mundo laboral de la tecnología! 
+      </h5>
+
+      <p class="w3-text-grey">Nuestro programa de mentorías individuales está diseñado para brindarte una visión profunda del 
+        ambiente laboral en IT. Desde consejos para encontrar tu primer trabajo en el sector hasta mejorar tu CV y entender 
+        completamente el ambiente tecnológico, nuestros mentores expertos te guiarán en cada paso del camino. Aprovecha esta 
+        oportunidad para desarrollar tu carrera profesional en el mundo de la tecnología.</p>
+    </div>
+    <div class="w3-third w3-center w3-margin-top">
+      <img style="width: 80%; " src="https://images.unsplash.com/photo-1522881193457-37ae97c905bf" />
+    </div>
+  </div>
+</div>
+<div class="w3-row-padding w3-padding-16 w3-container w3-center">
+  <button class="w3-button w3-padding-large w3-large content-cta">Estoy listo!</button>
+</div>
+
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
@@ -93,7 +134,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
  </div>
- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
 <script>
