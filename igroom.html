@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO Meta Tags -->
+<title>iGroom - Software de gestión para negocios de grooming | Exum</title>
+<meta name="description" content="iGroom es el software simple para negocios de grooming: gestiona clientes, mascotas y citas en un solo lugar. Un producto de Exum.">
+<meta name="keywords" content="iGroom, software grooming, gestión de citas, software para peluquería canina, agenda para grooming, Exum">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://exumsoftware.com/igroom.html">
+<meta property="og:title" content="iGroom - Software de gestión para negocios de grooming">
+<meta property="og:description" content="Gestiona clientes, mascotas y citas de tu negocio de grooming con una herramienta simple y fácil de usar.">
+<meta property="og:image" content="https://exumsoftware.com/images/igroom/igroom_month_calendar.webp">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://exumsoftware.com/igroom.html">
+<meta property="twitter:title" content="iGroom - Software de gestión para negocios de grooming">
+<meta property="twitter:description" content="Gestiona clientes, mascotas y citas de tu negocio de grooming con una herramienta simple y fácil de usar.">
+<meta property="twitter:image" content="https://exumsoftware.com/images/igroom/igroom_month_calendar.webp">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/exum/favicon.png">
+<link rel="apple-touch-icon" href="images/exum/favicon.png">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://exumsoftware.com/igroom.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:600,700,800">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="igroom.css">
+</head>
+<body>
+
+<div id="app" v-cloak>
+
+  <nav class="navbar">
+    <a href="#inicio" class="navbar-brand">
+      <img src="images/exum/igroom_logo.webp" alt="iGroom">
+    </a>
+
+    <button
+      class="nav-toggle"
+      :class="{ open: menuOpen }"
+      @click="menuOpen = !menuOpen"
+      :aria-expanded="menuOpen"
+      aria-label="Menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" :class="{ open: menuOpen }">
+      <a href="index.html">Exum</a>
+      <a href="#inicio" @click="menuOpen = false">{{ t.nav.home }}</a>
+      <a href="#funciones" @click="menuOpen = false">{{ t.nav.features }}</a>
+      <a href="#contacto" @click="menuOpen = false">{{ t.nav.contact }}</a>
+      <button class="lang-switch" @click="toggleLang">{{ lang === 'es' ? 'EN' : 'ES' }}</button>
+    </div>
+  </nav>
+
+  <header id="inicio" class="product-hero">
+    <div class="product-hero-content">
+      <img class="product-hero-logo" src="images/exum/igroom_logo.webp" alt="iGroom">
+      <h1>{{ t.hero.title }}</h1>
+      <p>{{ t.hero.subtitle }}</p>
+      <a :href="whatsappLink" class="cta-button" target="_blank" rel="noopener">{{ t.hero.cta }}</a>
+      <img class="product-hero-shot" src="images/igroom/igroom_month_calendar.webp" alt="Calendario de iGroom">
+    </div>
+  </header>
+
+  <section id="funciones" class="features">
+    <div class="feature-row" v-for="(feature, index) in t.features" :key="feature.id" :class="{ reverse: index % 2 === 1 }">
+      <div class="feature-text">
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+      <div class="feature-image">
+        <img :src="feature.image" :alt="feature.title">
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>{{ t.contact.title }}</h2>
+        <p>{{ t.contact.subtitle }}</p>
+      </div>
+
+      <div class="contact-actions">
+        <a :href="whatsappLink" class="cta-button" target="_blank" rel="noopener">{{ t.contact.whatsappCta }}</a>
+        <a :href="'mailto:' + t.contact.email" class="contact-email">{{ t.contact.email }}</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="index.html">Exum</a>
+    </div>
+    <p class="footer-copyright">{{ t.footer.copyright }}</p>
+  </footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.prod.min.js"></script>
+<script>
+  const { createApp } = Vue;
+
+  createApp({
+    data() {
+      return {
+        lang: 'es',
+        menuOpen: false,
+        whatsappNumber: '50230514778',
+        translations: {
+          es: {
+            nav: {
+              home: 'Inicio',
+              features: 'Funciones',
+              contact: 'Contacto'
+            },
+            hero: {
+              title: 'El software simple para tu negocio de grooming.',
+              subtitle: 'Organiza citas, clientes y mascotas en un solo lugar. Deja el papeleo atrás y enfócate en lo que más importa: tus clientes peludos.',
+              cta: 'Quiero probar iGroom',
+              whatsappMessage: 'Hola, quiero saber más sobre iGroom.'
+            },
+            features: [
+              {
+                id: 'calendar',
+                title: 'Calendario flexible',
+                description: 'Mira tu día, semana o mes completo de un vistazo, y agenda citas nuevas en segundos.',
+                image: 'images/igroom/igroom_week_calendar.webp'
+              },
+              {
+                id: 'clients',
+                title: 'Clientes y mascotas en un solo lugar',
+                description: 'Cada cliente con su información de contacto, notas y mascotas, todo conectado a su historial de citas.',
+                image: 'images/igroom/igroom_client_view.webp'
+              },
+              {
+                id: 'appointments',
+                title: 'Citas sin complicaciones',
+                description: 'Crea una cita en un formulario simple: cliente, horario y notas especiales para el groomer.',
+                image: 'images/igroom/igroom_appointment_creation.webp'
+              },
+              {
+                id: 'reports',
+                title: 'Reportes que te ayudan a vender más',
+                description: 'Identifica a los clientes que no han vuelto y contáctalos antes de perderlos.',
+                image: 'images/igroom/igroom_active_clients_report.webp'
+              }
+            ],
+            contact: {
+              title: 'Empieza con iGroom',
+              subtitle: 'iGroom ya está disponible. Escríbenos para conocer el precio y empezar a usarlo en tu negocio.',
+              whatsappCta: 'Escríbenos por WhatsApp',
+              email: 'exumguatemala@gmail.com'
+            },
+            footer: {
+              copyright: '© 2026 Exum. Todos los derechos reservados.'
+            }
+          },
+          en: {
+            nav: {
+              home: 'Home',
+              features: 'Features',
+              contact: 'Contact'
+            },
+            hero: {
+              title: 'The simple software for your grooming business.',
+              subtitle: "Manage appointments, clients, and pets in one place. Ditch the paperwork and focus on what matters most: your furry clients.",
+              cta: 'I want to try iGroom',
+              whatsappMessage: "Hi, I'd like to know more about iGroom."
+            },
+            features: [
+              {
+                id: 'calendar',
+                title: 'Flexible calendar',
+                description: 'See your whole day, week, or month at a glance, and book new appointments in seconds.',
+                image: 'images/igroom/igroom_week_calendar.webp'
+              },
+              {
+                id: 'clients',
+                title: 'Clients and pets in one place',
+                description: 'Every client with their contact info, notes, and pets — all connected to their appointment history.',
+                image: 'images/igroom/igroom_client_view.webp'
+              },
+              {
+                id: 'appointments',
+                title: 'Appointments made simple',
+                description: 'Create an appointment with a simple form: client, time, and special notes for the groomer.',
+                image: 'images/igroom/igroom_appointment_creation.webp'
+              },
+              {
+                id: 'reports',
+                title: 'Reports that help you sell more',
+                description: "Spot clients who haven't been back and reach out before you lose them.",
+                image: 'images/igroom/igroom_active_clients_report.webp'
+              }
+            ],
+            contact: {
+              title: 'Get started with iGroom',
+              subtitle: "iGroom is available now. Message us to get pricing and start using it in your business.",
+              whatsappCta: 'Message us on WhatsApp',
+              email: 'exumguatemala@gmail.com'
+            },
+            footer: {
+              copyright: '© 2026 Exum. All rights reserved.'
+            }
+          }
+        }
+      };
+    },
+    computed: {
+      t() {
+        return this.translations[this.lang];
+      },
+      whatsappLink() {
+        return 'https://wa.me/' + this.whatsappNumber + '?text=' + encodeURIComponent(this.t.hero.whatsappMessage);
+      }
+    },
+    methods: {
+      toggleLang() {
+        this.lang = this.lang === 'es' ? 'en' : 'es';
+      }
+    },
+    watch: {
+      lang: {
+        immediate: true,
+        handler(value) {
+          document.documentElement.lang = value;
+        }
+      }
+    }
+  }).mount('#app');
+</script>
+
+</body>
+</html>
