@@ -79,7 +79,7 @@
       </div>
 
       <div class="products-grid">
-        <article class="product-card" v-for="product in t.products.items" :key="product.id">
+        <article class="product-card" v-for="product in t.products.items.filter(p => p.visible)" :key="product.id">
           <div class="product-logo">
             <img :src="product.logo" :alt="product.name">
           </div>
@@ -143,9 +143,7 @@
 
   <footer class="site-footer">
     <div class="footer-links">
-      <a href="igroom.html">iGroom</a>
-      <a href="iwear.html">iWear</a>
-      <a href="icase.html">iCase</a>
+      <a v-for="product in t.products.items.filter(p => p.visible)" :key="product.id" :href="product.href">{{ product.name }}</a>
     </div>
     <p class="footer-copyright">{{ t.footer.copyright }}</p>
   </footer>
@@ -185,21 +183,24 @@
                   name: 'iGroom',
                   description: 'Gestiona clientes, mascotas y citas de tu negocio de grooming con una herramienta simple y fácil de usar.',
                   logo: 'images/igroom_logo.webp',
-                  href: 'igroom.html'
+                  href: 'igroom.html',
+                  visible: true
                 },
                 {
                   id: 'iwear',
                   name: 'iWear',
                   description: 'El ERP para negocios textiles: controla clientes, pedidos, materiales e inventario en un solo lugar.',
                   logo: 'images/iwear_logo.webp',
-                  href: 'iwear.html'
+                  href: 'iwear.html',
+                  visible: false
                 },
                 {
                   id: 'icase',
                   name: 'iCase',
                   description: 'La herramienta para abogados y firmas legales que organiza clientes, documentos y casos. Próximamente.',
                   logo: 'images/icase_logo.webp',
-                  href: 'icase.html'
+                  href: 'icase.html',
+                  visible: false
                 }
               ]
             },
@@ -234,7 +235,7 @@
                 {
                   id: 'kenny',
                   name: 'Kenny Barrera',
-                  role: 'Fundador',
+                  role: 'Fundador e Ingeniero de Software',
                   initials: 'KB',
                   photo: 'images/team_kenny_barrera.webp',
                   visible: true
@@ -291,21 +292,24 @@
                   name: 'iGroom',
                   description: 'Manage clients, pets, and appointments for your grooming business with a simple, easy-to-use tool.',
                   logo: 'images/igroom_logo.webp',
-                  href: 'igroom.html'
+                  href: 'igroom.html',
+                  visible: true
                 },
                 {
                   id: 'iwear',
                   name: 'iWear',
                   description: 'The ERP for textile businesses: track clients, orders, materials, and inventory in one place.',
                   logo: 'images/iwear_logo.webp',
-                  href: 'iwear.html'
+                  href: 'iwear.html',
+                  visible: false
                 },
                 {
                   id: 'icase',
                   name: 'iCase',
                   description: 'The tool for lawyers and firms to organize clients, documents, and cases. Coming soon.',
                   logo: 'images/icase_logo.webp',
-                  href: 'icase.html'
+                  href: 'icase.html',
+                  visible: false
                 }
               ]
             },
@@ -340,7 +344,7 @@
                 {
                   id: 'kenny',
                   name: 'Kenny Barrera',
-                  role: 'Founder',
+                  role: 'Founder and Software Engineer',
                   initials: 'KB',
                   photo: 'images/team_kenny_barrera.webp',
                   visible: true
