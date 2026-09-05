@@ -1,151 +1,401 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<title>Exum Guatemala - Asesoria Tecnológica</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
 
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
-.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
-.fa-anchor,.fa-coffee {font-size:200px}
-.exum-background-gray {background-color: rgb(101,101,101);}
-.exum-background-yellow {background-color: rgb(250,223,75);}
+<!-- SEO Meta Tags -->
+<title>Exum - Software simple para negocios reales | iGroom, iWear, iCase</title>
+<meta name="description" content="Exum crea software simple y enfocado para negocios reales: iGroom para grooming, iWear para textiles e iCase para abogados.">
+<meta name="keywords" content="software SaaS, software para negocios, iGroom, iWear, iCase, software grooming, ERP textil, software para abogados, Guatemala, Centroamérica">
 
-.header-cta {
-  background-color: rgb(250,223,75);
-  color: black;
-}
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://exumsoftware.com/">
+<meta property="og:title" content="Exum - Software simple para negocios reales">
+<meta property="og:description" content="Software simple y enfocado para negocios reales: iGroom, iWear e iCase.">
+<meta property="og:image" content="https://exumsoftware.com/images/og-image.png">
 
-.content-cta {
-  background-color: rgb(101,101,101);
-  color: white;
-}
-</style>
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://exumsoftware.com/">
+<meta property="twitter:title" content="Exum - Software simple para negocios reales">
+<meta property="twitter:description" content="Software simple y enfocado para negocios reales: iGroom, iWear e iCase.">
+<meta property="twitter:image" content="https://exumsoftware.com/images/og-image.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://exumsoftware.com/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:600,700,800">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-card w3-left-align w3-large exum-background-yellow">
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-large exum-background-yellow" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#home" class="w3-bar-item w3-button w3-padding-large exum-background-yellow">Inicio</a>
-    <a href="#asesoria" class="w3-bar-item w3-button w3-hide-small w3-padding-large">Asesoria en Tecnología</a>
-    <a href="#grupos" class="w3-bar-item w3-button w3-hide-small w3-padding-large">Mentorías Grupales</a>
-    <a href="#individual" class="w3-bar-item w3-button w3-hide-small w3-padding-large">Mentorías Individuales</a>
-  </div>
+<div id="app" v-cloak>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-large exum-background-yellow">
-    <a href="#asesoria" class="w3-bar-item w3-button w3-padding-large">Asesoria en Tecnología</a>
-    <a href="#grupos" class="w3-bar-item w3-button w3-padding-large">Mentorías Grupales</a>
-    <a href="#individual" class="w3-bar-item w3-button w3-padding-large">Mentorías Individuales</a>
-  </div>
-</div>
+  <nav class="navbar">
+    <a href="#inicio" class="navbar-brand">
+      <img src="images/exum_logo.webp" alt="Exum">
+    </a>
 
-<!-- Header -->
-<header id="home" class="w3-container w3-center exum-background-gray" style="padding:128px 16px; color: white;">
-  <p class="w3-xlarge">Exum Education</p>
-  <h1 class="w3-margin w3-jumbo">Te mostramos la mejor ruta para tu negocio en el mundo digital</h1>
-  <p class="w3-xlarge">Un experto te ayudara a tomar las mejores decisiones sobre que productos tecnologicos usar, como, cuando y donde hacerlo.</p>
-  <button class="w3-button w3-padding-large w3-large w3-margin-top header-cta">Quiero agendar una cita!</button>
-</header>
+    <button
+      class="nav-toggle"
+      :class="{ open: menuOpen }"
+      @click="menuOpen = !menuOpen"
+      :aria-expanded="menuOpen"
+      aria-label="Menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
 
-<!-- First Grid -->
-<div id="asesoria" class="w3-row-padding w3-padding-32 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Asesoria en Tecnología</h1>
-      <h5 class="w3-padding-16">
-        Respondemos tus preguntas, creamos o mejoramos tus procesos, te ayudamos a tomar decisiones. 
-      </h5>
-
-      <p class="w3-text-grey">Nuestro equipo especializado está aquí para guiarte en el mundo de la tecnología. 
-        Desde la selección del software adecuado hasta la optimización de tus procesos de manejo de datos, 
-        estamos comprometidos a ayudarte a tomar decisiones informadas y cumplir las metas de tu negocio.</p>
+    <div class="nav-links" :class="{ open: menuOpen }">
+      <a href="#inicio" @click="menuOpen = false">{{ t.nav.home }}</a>
+      <a href="#productos" @click="menuOpen = false">{{ t.nav.products }}</a>
+      <a href="#por-que" @click="menuOpen = false">{{ t.nav.why }}</a>
+      <a href="#equipo" @click="menuOpen = false">{{ t.nav.team }}</a>
+      <a href="#contacto" @click="menuOpen = false">{{ t.nav.contact }}</a>
+      <button class="lang-switch" @click="toggleLang">{{ lang === 'es' ? 'EN' : 'ES' }}</button>
     </div>
+  </nav>
 
-    <div class="w3-third w3-center w3-margin-top">
-      <img style="width: 80%; " src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4" />
+  <header id="inicio" class="hero">
+    <div class="hero-content">
+      <h1>{{ t.hero.title }}</h1>
+      <p>{{ t.hero.subtitle }}</p>
+      <a :href="'https://wa.me/' + t.contact.whatsapp" class="cta-button" target="_blank" rel="noopener">{{ t.hero.cta }}</a>
     </div>
-  </div>
-</div>
-<div class="w3-row-padding w3-padding-16 w3-container w3-center">
-  <button class="w3-button w3-padding-large w3-large content-cta">Tengo preguntas!</button>
-</div>
+  </header>
 
+  <section id="productos" class="products">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>{{ t.products.title }}</h2>
+        <p>{{ t.products.subtitle }}</p>
+      </div>
 
-<!-- Second Grid -->
-<div id="grupos" class="w3-row-padding w3-light-grey w3-padding-32 w3-container">
-  <div class="w3-content">
-    <div class="w3-third w3-center w3-margin-top">
-      <img style="width: 80%; " src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655" />
+      <div class="products-grid">
+        <article class="product-card" v-for="product in t.products.items" :key="product.id">
+          <div class="product-logo">
+            <img :src="product.logo" :alt="product.name">
+          </div>
+          <p>{{ product.description }}</p>
+          <a :href="product.href" class="product-link">{{ t.products.cta }}</a>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <div class="w3-twothird">
-      <h1>Mentorías Grupales</h1>
-      <h5 class="w3-padding-32">¿Estás listo para triunfar en tu examen final de Ingeniería en Sistemas? ¡Prepárate con nuestras clases privadas!</h5>
+  <section id="por-que" class="why">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>{{ t.why.title }}</h2>
+        <p>{{ t.why.subtitle }}</p>
+      </div>
 
-      <p class="w3-text-grey">Nuestras clases privadas están diseñadas para brindarte el apoyo y la preparación que necesitas para alcanzar el éxito 
-        en tu examen final de Ingeniería en Sistemas. Con nuestros experimentados mentores, obtendrás la orientación y el conocimiento que te llevarán 
-        al siguiente nivel académico.</p>
+      <div class="why-grid">
+        <div class="why-item" v-for="item in t.why.items" :key="item.id">
+          <div class="why-icon" v-html="item.icon"></div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-<div class="w3-row-padding w3-padding-16 w3-light-grey w3-container w3-center">
-  <button class="w3-button w3-padding-large w3-large content-cta">Quiero triunfar!</button>
-</div>
+  </section>
 
-<!-- Third Grid -->
-<div id="individual" class="w3-row-padding w3-padding-32 w3-container">
-  <div class="w3-content">
-    <div class="w3-twothird">
-      <h1>Mentorías Individuales</h1>
-      <h5 class="w3-padding-16">
-        ¿Listo para dar el salto en tu carrera en IT? ¡Accede a mentorías personalizadas y conquista el mundo laboral de la tecnología! 
-      </h5>
+  <section id="equipo" class="team">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>{{ t.team.title }}</h2>
+        <p>{{ t.team.subtitle }}</p>
+      </div>
 
-      <p class="w3-text-grey">Nuestro programa de mentorías individuales está diseñado para brindarte una visión profunda del 
-        ambiente laboral en IT. Desde consejos para encontrar tu primer trabajo en el sector hasta mejorar tu CV y entender 
-        completamente el ambiente tecnológico, nuestros mentores expertos te guiarán en cada paso del camino. Aprovecha esta 
-        oportunidad para desarrollar tu carrera profesional en el mundo de la tecnología.</p>
+      <div class="team-grid">
+        <div class="team-card" v-for="member in t.team.members.filter(m => m.visible)" :key="member.id">
+          <div class="team-photo">
+            <img v-if="member.photo" :src="member.photo" :alt="member.name">
+            <span v-else class="team-initials">{{ member.initials }}</span>
+          </div>
+          <h3>{{ member.name }}</h3>
+          <p class="team-role">{{ member.role }}</p>
+        </div>
+      </div>
     </div>
-    <div class="w3-third w3-center w3-margin-top">
-      <img style="width: 80%; " src="https://images.unsplash.com/photo-1522881193457-37ae97c905bf" />
+  </section>
+
+  <section id="contacto" class="contact">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>{{ t.contact.title }}</h2>
+        <p>{{ t.contact.subtitle }}</p>
+      </div>
+
+      <div class="contact-actions">
+        <a :href="'https://wa.me/' + t.contact.whatsapp" class="cta-button" target="_blank" rel="noopener">{{ t.contact.whatsappCta }}</a>
+        <a :href="'mailto:' + t.contact.email" class="contact-email">{{ t.contact.email }}</a>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-links">
+      <a href="igroom.html">iGroom</a>
+      <a href="iwear.html">iWear</a>
+      <a href="icase.html">iCase</a>
+    </div>
+    <p class="footer-copyright">{{ t.footer.copyright }}</p>
+  </footer>
+
 </div>
-<div class="w3-row-padding w3-padding-16 w3-container w3-center">
-  <button class="w3-button w3-padding-large w3-large content-cta">Estoy listo!</button>
-</div>
 
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-32">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
- </div>
-</footer>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.prod.min.js"></script>
 <script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
+  const { createApp } = Vue;
+
+  createApp({
+    data() {
+      return {
+        lang: 'es',
+        menuOpen: false,
+        translations: {
+          es: {
+            nav: {
+              home: 'Inicio',
+              products: 'Productos',
+              why: 'Por qué',
+              team: 'Equipo',
+              contact: 'Contacto'
+            },
+            hero: {
+              title: 'Software simple para negocios reales.',
+              subtitle: 'Software listo para usar, diseñado para negocios como el tuyo. Descubre el producto ideal para tu negocio y empieza hoy mismo.',
+              cta: 'Hablemos'
+            },
+            products: {
+              title: 'Nuestros productos',
+              subtitle: 'Cada producto resuelve un problema específico para un tipo de negocio específico.',
+              cta: 'Conocer más',
+              items: [
+                {
+                  id: 'igroom',
+                  name: 'iGroom',
+                  description: 'Gestiona clientes, mascotas y citas de tu negocio de grooming con una herramienta simple y fácil de usar.',
+                  logo: 'images/igroom_logo.webp',
+                  href: 'igroom.html'
+                },
+                {
+                  id: 'iwear',
+                  name: 'iWear',
+                  description: 'El ERP para negocios textiles: controla clientes, pedidos, materiales e inventario en un solo lugar.',
+                  logo: 'images/iwear_logo.webp',
+                  href: 'iwear.html'
+                },
+                {
+                  id: 'icase',
+                  name: 'iCase',
+                  description: 'La herramienta para abogados y firmas legales que organiza clientes, documentos y casos. Próximamente.',
+                  logo: 'images/icase_logo.webp',
+                  href: 'icase.html'
+                }
+              ]
+            },
+            why: {
+              title: 'Cómo y por qué lo hacemos',
+              subtitle: 'Construimos software distinto: enfocado, simple y con nombre y apellido detrás.',
+              items: [
+                {
+                  id: 'focus',
+                  title: 'Un problema, un producto',
+                  description: 'Cada producto de Exum está diseñado para un solo tipo de negocio, así que hace exactamente lo que necesitas, sin funciones de más.',
+                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>'
+                },
+                {
+                  id: 'simple',
+                  title: 'Simple de verdad',
+                  description: 'Sin curvas de aprendizaje complicadas ni manuales de 100 páginas: si puedes usar tu teléfono, puedes usar Exum.',
+                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6"/></svg>'
+                },
+                {
+                  id: 'direct',
+                  title: 'Acceso directo',
+                  description: 'Hablas directamente con quien construye el producto, sin intermediarios.',
+                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L4 20l1.05-4.55A8.47 8.47 0 013.5 11.5 8.5 8.5 0 0112 3a8.5 8.5 0 019 8.5z"/></svg>'
+                }
+              ]
+            },
+            team: {
+              title: 'Nuestro equipo',
+              subtitle: 'Un equipo pequeño, comprometido con cada detalle.',
+              members: [
+                {
+                  id: 'kenny',
+                  name: 'Kenny Barrera',
+                  role: 'Fundador',
+                  initials: 'KB',
+                  photo: 'images/team_kenny_barrera.webp',
+                  visible: true
+                },
+                {
+                  id: 'jaslin',
+                  name: 'Jaslin Barrera',
+                  role: 'Diseño',
+                  initials: 'JB',
+                  photo: null,
+                  visible: false
+                },
+                {
+                  id: 'moroni',
+                  name: 'Moroni Ramirez',
+                  role: 'Ventas',
+                  initials: 'MR',
+                  photo: null,
+                  visible: false
+                }
+              ]
+            },
+            contact: {
+              title: 'Hablemos',
+              subtitle: '¿Tienes dudas sobre nuestros productos? Escríbenos y te ayudamos a elegir el correcto para tu negocio.',
+              whatsappCta: 'Escríbenos por WhatsApp',
+              whatsapp: '50230514778',
+              email: 'exumguatemala@gmail.com'
+            },
+            footer: {
+              copyright: '© 2026 Exum. Todos los derechos reservados.'
+            }
+          },
+          en: {
+            nav: {
+              home: 'Home',
+              products: 'Products',
+              why: 'Why us',
+              team: 'Team',
+              contact: 'Contact'
+            },
+            hero: {
+              title: 'Simple software for real businesses.',
+              subtitle: "Ready-to-use software, built for businesses like yours. Find the right product for your business and get started today.",
+              cta: "Let's talk"
+            },
+            products: {
+              title: 'Our products',
+              subtitle: 'Each product solves one specific problem for one specific type of business.',
+              cta: 'Learn more',
+              items: [
+                {
+                  id: 'igroom',
+                  name: 'iGroom',
+                  description: 'Manage clients, pets, and appointments for your grooming business with a simple, easy-to-use tool.',
+                  logo: 'images/igroom_logo.webp',
+                  href: 'igroom.html'
+                },
+                {
+                  id: 'iwear',
+                  name: 'iWear',
+                  description: 'The ERP for textile businesses: track clients, orders, materials, and inventory in one place.',
+                  logo: 'images/iwear_logo.webp',
+                  href: 'iwear.html'
+                },
+                {
+                  id: 'icase',
+                  name: 'iCase',
+                  description: 'The tool for lawyers and firms to organize clients, documents, and cases. Coming soon.',
+                  logo: 'images/icase_logo.webp',
+                  href: 'icase.html'
+                }
+              ]
+            },
+            why: {
+              title: 'How and why we build',
+              subtitle: 'We build software differently: focused, simple, and with a real person behind it.',
+              items: [
+                {
+                  id: 'focus',
+                  title: 'One problem, one product',
+                  description: 'Every Exum product is built for one specific type of business, so it does exactly what you need — no bloat.',
+                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>'
+                },
+                {
+                  id: 'simple',
+                  title: 'Actually simple',
+                  description: "No steep learning curves or 100-page manuals: if you can use your phone, you can use Exum.",
+                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6"/></svg>'
+                },
+                {
+                  id: 'direct',
+                  title: 'Direct access',
+                  description: "You talk directly to the person building the product, with no middlemen.",
+                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L4 20l1.05-4.55A8.47 8.47 0 013.5 11.5 8.5 8.5 0 0112 3a8.5 8.5 0 019 8.5z"/></svg>'
+                }
+              ]
+            },
+            team: {
+              title: 'Our team',
+              subtitle: 'A small team, committed to every detail.',
+              members: [
+                {
+                  id: 'kenny',
+                  name: 'Kenny Barrera',
+                  role: 'Founder',
+                  initials: 'KB',
+                  photo: 'images/team_kenny_barrera.webp',
+                  visible: true
+                },
+                {
+                  id: 'jaslin',
+                  name: 'Jaslin Barrera',
+                  role: 'Design',
+                  initials: 'JB',
+                  photo: null,
+                  visible: false
+                },
+                {
+                  id: 'moroni',
+                  name: 'Moroni Ramirez',
+                  role: 'Sales',
+                  initials: 'MR',
+                  photo: null,
+                  visible: false
+                }
+              ]
+            },
+            contact: {
+              title: "Let's talk",
+              subtitle: "Got questions about our products? Message us and we'll help you find the right one for your business.",
+              whatsappCta: 'Message us on WhatsApp',
+              whatsapp: '50230514778',
+              email: 'exumguatemala@gmail.com'
+            },
+            footer: {
+              copyright: '© 2026 Exum. All rights reserved.'
+            }
+          }
+        }
+      };
+    },
+    computed: {
+      t() {
+        return this.translations[this.lang];
+      }
+    },
+    methods: {
+      toggleLang() {
+        this.lang = this.lang === 'es' ? 'en' : 'es';
+      }
+    },
+    watch: {
+      lang: {
+        immediate: true,
+        handler(value) {
+          document.documentElement.lang = value;
+        }
+      }
+    }
+  }).mount('#app');
 </script>
 
 </body>
