@@ -58,6 +58,7 @@
       <a href="index.html">Exum</a>
       <a href="#inicio" @click="menuOpen = false">{{ t.nav.home }}</a>
       <a href="#funciones" @click="menuOpen = false">{{ t.nav.features }}</a>
+      <a href="#precios" @click="menuOpen = false">{{ t.nav.pricing }}</a>
       <a href="#contacto" @click="menuOpen = false">{{ t.nav.contact }}</a>
       <button class="lang-switch" @click="toggleLang">{{ lang === 'es' ? 'EN' : 'ES' }}</button>
     </div>
@@ -69,7 +70,6 @@
       <h1>{{ t.hero.title }}</h1>
       <p>{{ t.hero.subtitle }}</p>
       <a :href="whatsappLink" class="cta-button" target="_blank" rel="noopener">{{ t.hero.cta }}</a>
-      <img class="product-hero-shot" src="images/igroom/igroom_month_calendar.webp" alt="Calendario de iGroom">
     </div>
   </header>
 
@@ -82,6 +82,33 @@
       <div class="feature-image">
         <img :src="feature.image" :alt="feature.title">
       </div>
+    </div>
+  </section>
+
+  <section id="precios" class="pricing">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>{{ t.pricing.title }}</h2>
+        <p>{{ t.pricing.subtitle }}</p>
+      </div>
+
+      <p class="pricing-note">{{ t.pricing.allTiersNote }}</p>
+
+      <div class="pricing-grid">
+        <div class="tier-card" v-for="tier in t.pricing.tiers" :key="tier.id">
+          <div class="tier-name">{{ tier.name }}</div>
+          <div class="tier-price">{{ tier.priceMonthly }}</div>
+          <div class="tier-price-period">{{ t.pricing.perMonth }}</div>
+          <div class="tier-price-annual">{{ tier.priceAnnual ? tier.priceAnnual + ' ' + t.pricing.perYear : t.pricing.annualComingSoon }}</div>
+          <div class="tier-prefix" v-if="tier.prefix">{{ tier.prefix }}</div>
+          <ul class="tier-features">
+            <li v-for="item in tier.features" :key="item">{{ item }}</li>
+          </ul>
+          <a :href="tierWhatsappLink(tier.name)" class="product-link" target="_blank" rel="noopener">{{ t.pricing.cta }}</a>
+        </div>
+      </div>
+
+      <p class="pricing-caption">{{ t.pricing.currencyNote }}</p>
     </div>
   </section>
 
@@ -123,6 +150,7 @@
             nav: {
               home: 'Inicio',
               features: 'Funciones',
+              pricing: 'Precios',
               contact: 'Contacto'
             },
             hero: {
@@ -157,9 +185,62 @@
                 image: 'images/igroom/igroom_active_clients_report.webp'
               }
             ],
+            pricing: {
+              title: 'Planes y precios',
+              subtitle: 'Empieza con el plan que tu negocio necesita hoy, y crece al siguiente cuando estés listo.',
+              allTiersNote: 'Todos los planes incluyen soporte en español e inglés, usuarios ilimitados y roles personalizados.',
+              perMonth: 'por mes',
+              perYear: 'por año',
+              annualComingSoon: 'Precio anual próximamente',
+              cta: 'Quiero este plan',
+              tierMessage: 'Hola, quiero más información sobre {tier}.',
+              currencyNote: 'Precios en quetzales guatemaltecos (GTQ).',
+              tiers: [
+                {
+                  id: 'tier1',
+                  name: 'iGroom Pro',
+                  priceMonthly: 'Q275',
+                  priceAnnual: 'Q3,150',
+                  prefix: '',
+                  features: [
+                    'Gestión de clientes, mascotas y citas',
+                    'Calendario por mes, semana y día',
+                    'Reporte de última cita (sin filtros)'
+                  ]
+                },
+                {
+                  id: 'tier2',
+                  name: 'iGroom Advance',
+                  priceMonthly: 'Q349',
+                  priceAnnual: 'Q4,000',
+                  prefix: 'Todo lo de iGroom Pro, más:',
+                  features: [
+                    'Exportar todos los reportes a Excel',
+                    'Reporte de última cita con filtros por día',
+                    'Reporte de citas por mes (últimos 2 meses)',
+                    'Gestión de servicios y productos por cita',
+                    'Gestión de pagos y saldos',
+                    'Reporte de pagos totales (último mes)'
+                  ]
+                },
+                {
+                  id: 'tier3',
+                  name: 'iGroom Enterprise',
+                  priceMonthly: 'Q599',
+                  priceAnnual: '',
+                  prefix: 'Todo lo de iGroom Advance, más:',
+                  features: [
+                    'Reportes avanzados con todos los filtros',
+                    'Hasta 12 meses de historial en reportes',
+                    'Gestión de etapas por mascota y cita',
+                    'Página pública de seguimiento para tus clientes'
+                  ]
+                }
+              ]
+            },
             contact: {
               title: 'Empieza con iGroom',
-              subtitle: 'iGroom ya está disponible. Escríbenos para conocer el precio y empezar a usarlo en tu negocio.',
+              subtitle: '¿Listo para empezar? Escríbenos y te ayudamos a activar tu cuenta.',
               whatsappCta: 'Escríbenos por WhatsApp',
               email: 'exumguatemala@gmail.com'
             },
@@ -171,6 +252,7 @@
             nav: {
               home: 'Home',
               features: 'Features',
+              pricing: 'Pricing',
               contact: 'Contact'
             },
             hero: {
@@ -205,9 +287,62 @@
                 image: 'images/igroom/igroom_active_clients_report.webp'
               }
             ],
+            pricing: {
+              title: 'Plans and pricing',
+              subtitle: 'Start with the plan your business needs today, and grow into the next one when you\'re ready.',
+              allTiersNote: 'Every plan includes Spanish and English support, unlimited users, and custom roles.',
+              perMonth: 'per month',
+              perYear: 'per year',
+              annualComingSoon: 'Annual price coming soon',
+              cta: 'I want this plan',
+              tierMessage: 'Hi, I\'d like more information about {tier}.',
+              currencyNote: 'Prices in Guatemalan quetzales (GTQ).',
+              tiers: [
+                {
+                  id: 'tier1',
+                  name: 'iGroom Pro',
+                  priceMonthly: 'Q275',
+                  priceAnnual: 'Q3,150',
+                  prefix: '',
+                  features: [
+                    'Manage clients, pets, and appointments',
+                    'Calendar by month, week, and day',
+                    'Last-appointment report (no filters)'
+                  ]
+                },
+                {
+                  id: 'tier2',
+                  name: 'iGroom Advance',
+                  priceMonthly: 'Q349',
+                  priceAnnual: 'Q4,000',
+                  prefix: 'Everything in iGroom Pro, plus:',
+                  features: [
+                    'Export all reports to Excel',
+                    'Last-appointment report with day filters',
+                    'Appointments-per-month report (last 2 months)',
+                    'Manage services/products per appointment',
+                    'Manage payments and balances',
+                    'Total payments report (last month)'
+                  ]
+                },
+                {
+                  id: 'tier3',
+                  name: 'iGroom Enterprise',
+                  priceMonthly: 'Q599',
+                  priceAnnual: '',
+                  prefix: 'Everything in iGroom Advance, plus:',
+                  features: [
+                    'Advanced reports with every filter',
+                    'Up to 12 months of history in all reports',
+                    'Manage stages per pet, per appointment',
+                    'Public tracking page for your clients'
+                  ]
+                }
+              ]
+            },
             contact: {
               title: 'Get started with iGroom',
-              subtitle: "iGroom is available now. Message us to get pricing and start using it in your business.",
+              subtitle: "Ready to get started? Message us and we'll help you get set up.",
               whatsappCta: 'Message us on WhatsApp',
               email: 'exumguatemala@gmail.com'
             },
@@ -229,6 +364,10 @@
     methods: {
       toggleLang() {
         this.lang = this.lang === 'es' ? 'en' : 'es';
+      },
+      tierWhatsappLink(tierName) {
+        const message = this.t.pricing.tierMessage.replace('{tier}', tierName);
+        return 'https://wa.me/' + this.whatsappNumber + '?text=' + encodeURIComponent(message);
       }
     },
     watch: {

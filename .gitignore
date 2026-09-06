@@ -1,0 +1,5 @@
+# Internal business/product notes — not meant to be public on the pages repo
+docs/
+
+# OS junk
+.DS_Store
