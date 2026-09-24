@@ -60,6 +60,9 @@
       <a href="#funciones" @click="menuOpen = false">{{ t.nav.features }}</a>
       <a href="#precios" @click="menuOpen = false">{{ t.nav.pricing }}</a>
       <a href="#contacto" @click="menuOpen = false">{{ t.nav.contact }}</a>
+      <select class="country-switch" v-model="country" :aria-label="t.nav.countryLabel">
+        <option v-for="c in countryList" :key="c.code" :value="c.code">{{ c.label }}</option>
+      </select>
       <button class="lang-switch" @click="toggleLang">{{ lang === 'es' ? 'EN' : 'ES' }}</button>
     </div>
   </nav>
@@ -92,23 +95,56 @@
         <p>{{ t.pricing.subtitle }}</p>
       </div>
 
-      <p class="pricing-note">{{ t.pricing.allTiersNote }}</p>
-
-      <div class="pricing-grid">
+      <div class="pricing-cards">
         <div class="tier-card" v-for="tier in t.pricing.tiers" :key="tier.id">
           <div class="tier-name">{{ tier.name }}</div>
-          <div class="tier-price">{{ tier.priceMonthly }}</div>
+          <div class="tier-price">{{ tierMonthlyPrice(tier.id) }}</div>
           <div class="tier-price-period">{{ t.pricing.perMonth }}</div>
-          <div class="tier-price-annual">{{ tier.priceAnnual ? tier.priceAnnual + ' ' + t.pricing.perYear : t.pricing.annualComingSoon }}</div>
-          <div class="tier-prefix" v-if="tier.prefix">{{ tier.prefix }}</div>
+          <div class="tier-price-annual">{{ tierAnnualPrice(tier.id) }} {{ t.pricing.perYear }}</div>
           <ul class="tier-features">
-            <li v-for="item in tier.features" :key="item">{{ item }}</li>
+            <li v-for="row in tierFeatureRows(tier.id)" :key="row.feature">
+              {{ row.feature }}
+              <span v-if="!row.built" class="coming-soon-badge" :title="t.pricing.comingSoonNote">🕒</span>
+            </li>
           </ul>
-          <a :href="tierWhatsappLink(tier.name)" class="product-link" target="_blank" rel="noopener">{{ t.pricing.cta }}</a>
         </div>
       </div>
 
-      <p class="pricing-caption">{{ t.pricing.currencyNote }}</p>
+      <div class="pricing-table-wrap">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th class="feature-col">{{ t.pricing.featureColumnLabel }}</th>
+              <th class="plan-col" v-for="tier in t.pricing.tiers" :key="tier.id">
+                <div class="plan-name">{{ tier.name }}</div>
+                <div class="plan-price">{{ tierMonthlyPrice(tier.id) }}</div>
+                <div class="plan-price-period">{{ t.pricing.perMonth }}</div>
+                <div class="plan-price-annual">{{ tierAnnualPrice(tier.id) }} {{ t.pricing.perYear }}</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <template v-for="group in t.pricing.featureGroups" :key="group.label">
+              <tr class="group-row">
+                <td :colspan="t.pricing.tiers.length + 1">{{ group.label }}</td>
+              </tr>
+              <tr v-for="row in group.rows" :key="row.feature">
+                <td class="feature-name-cell">
+                  {{ row.feature }}
+                  <span v-if="!row.built" class="coming-soon-badge" :title="t.pricing.comingSoonNote">🕒</span>
+                </td>
+                <td class="feature-cell" v-for="tier in t.pricing.tiers" :key="tier.id">
+                  <span v-if="row.tiers.includes(tier.id)" class="feature-check">✓</span>
+                  <span v-else class="feature-dash">–</span>
+                </td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="pricing-caption">🕒 {{ t.pricing.comingSoonNote }}</p>
+      <p class="pricing-caption">{{ t.pricing.currencyNoteByCountry[country] }}</p>
     </div>
   </section>
 
@@ -143,15 +179,45 @@
     data() {
       return {
         lang: 'es',
+        country: 'GT',
         menuOpen: false,
         whatsappNumber: '50230514778',
+        countryCodes: ['US', 'GT', 'HN'],
+        countryFlags: {
+          US: '🇺🇸',
+          GT: '🇬🇹',
+          HN: '🇭🇳'
+        },
+        pricingByCountry: {
+          US: {
+            tier1: { monthly: '$45', annual: '$450' },
+            tier2: { monthly: '$60', annual: '$600' },
+            tier3: { monthly: '$100', annual: '$1,000' }
+          },
+          GT: {
+            tier1: { monthly: 'Q355', annual: 'Q3,550' },
+            tier2: { monthly: 'Q469', annual: 'Q4,690' },
+            tier3: { monthly: 'Q780', annual: 'Q7,800' }
+          },
+          HN: {
+            tier1: { monthly: 'L1,200', annual: 'L12,000' },
+            tier2: { monthly: 'L1,600', annual: 'L16,000' },
+            tier3: { monthly: 'L2,675', annual: 'L26,750' }
+          }
+        },
         translations: {
           es: {
             nav: {
               home: 'Inicio',
               features: 'Funciones',
               pricing: 'Precios',
-              contact: 'Contacto'
+              contact: 'Contacto',
+              countryLabel: 'País'
+            },
+            countryNames: {
+              US: 'Estados Unidos',
+              GT: 'Guatemala',
+              HN: 'Honduras'
             },
             hero: {
               title: 'El software simple para tu negocio de grooming.',
@@ -188,52 +254,56 @@
             pricing: {
               title: 'Planes y precios',
               subtitle: 'Empieza con el plan que tu negocio necesita hoy, y crece al siguiente cuando estés listo.',
-              allTiersNote: 'Todos los planes incluyen soporte en español e inglés, usuarios ilimitados y roles personalizados.',
               perMonth: 'por mes',
               perYear: 'por año',
-              annualComingSoon: 'Precio anual próximamente',
-              cta: 'Quiero este plan',
-              tierMessage: 'Hola, quiero más información sobre {tier}.',
-              currencyNote: 'Precios en quetzales guatemaltecos (GTQ).',
+              comingSoonNote: 'Disponible a fines de 2026.',
+              featureColumnLabel: 'Función',
+              currencyNoteByCountry: {
+                US: 'Precios en dólares estadounidenses (USD).',
+                GT: 'Precios en quetzales guatemaltecos (GTQ).',
+                HN: 'Precios en lempiras hondureñas (HNL).'
+              },
               tiers: [
+                { id: 'tier1', name: 'iGroom Pro' },
+                { id: 'tier2', name: 'iGroom Advance' },
+                { id: 'tier3', name: 'iGroom Enterprise' }
+              ],
+              featureGroups: [
                 {
-                  id: 'tier1',
-                  name: 'iGroom Pro',
-                  priceMonthly: 'Q275',
-                  priceAnnual: 'Q3,150',
-                  prefix: '',
-                  features: [
-                    'Gestión de clientes, mascotas y citas',
-                    'Calendario por mes, semana y día',
-                    'Reporte de última cita (sin filtros)',
-                    'Gestión de pagos y saldos'
+                  label: 'Incluido en todos los planes',
+                  rows: [
+                    { feature: 'Localización en español e inglés', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Usuarios ilimitados', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Roles y permisos personalizados', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Gestión de clientes, mascotas y citas', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Calendario por mes, semana y día', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Gestión de pagos y saldos', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Reporte de última cita (sin filtros)', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Gestión de servicios y productos por cita, por mascota', tiers: ['tier1', 'tier2', 'tier3'], built: false },
+                    { feature: 'Fotos por cita (antes y después)', tiers: ['tier1', 'tier2', 'tier3'], built: false }
                   ]
                 },
                 {
-                  id: 'tier2',
-                  name: 'iGroom Advance',
-                  priceMonthly: 'Q349',
-                  priceAnnual: 'Q4,000',
-                  prefix: 'Todo lo de iGroom Pro, más:',
-                  features: [
-                    'Gestión de servicios y productos por cita',
-                    'Reporte de última cita con filtros por día',
-                    'Reporte de citas por mes (últimos 2 meses)',
-                    'Reporte de pagos totales (último mes)',
-                    'Exportar todos los reportes a Excel'
+                  label: 'Además, con iGroom Advance',
+                  rows: [
+                    { feature: 'Recordatorios automáticos por WhatsApp', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Horarios y turnos de empleados', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Inventario básico por cita', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Registro de actividad del equipo', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Dashboard con reportes (historial limitado)', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Reporte de última cita con filtros por día', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Exportar todos los reportes a Excel', tiers: ['tier2', 'tier3'], built: false }
                   ]
                 },
                 {
-                  id: 'tier3',
-                  name: 'iGroom Enterprise',
-                  priceMonthly: 'Q599',
-                  priceAnnual: '',
-                  prefix: 'Todo lo de iGroom Advance, más:',
-                  features: [
-                    'Reportes avanzados con todos los filtros',
-                    'Hasta 12 meses de historial en reportes',
-                    'Gestión de etapas por mascota y cita',
-                    'Página pública de seguimiento para tus clientes'
+                  label: 'Además, con iGroom Enterprise',
+                  rows: [
+                    { feature: 'Dashboard completo, sin límites de historial ni filtros', tiers: ['tier3'], built: false },
+                    { feature: 'Gestión de etapas por mascota y cita', tiers: ['tier3'], built: false },
+                    { feature: 'Página pública de seguimiento, con fotos', tiers: ['tier3'], built: false },
+                    { feature: 'Auto-agendamiento de citas para tus clientes', tiers: ['tier3'], built: false },
+                    { feature: 'Inventario completo con descuento automático', tiers: ['tier3'], built: false },
+                    { feature: 'Auditoría completa y exportable', tiers: ['tier3'], built: false }
                   ]
                 }
               ]
@@ -253,7 +323,13 @@
               home: 'Home',
               features: 'Features',
               pricing: 'Pricing',
-              contact: 'Contact'
+              contact: 'Contact',
+              countryLabel: 'Country'
+            },
+            countryNames: {
+              US: 'United States',
+              GT: 'Guatemala',
+              HN: 'Honduras'
             },
             hero: {
               title: 'The simple software for your grooming business.',
@@ -290,52 +366,56 @@
             pricing: {
               title: 'Plans and pricing',
               subtitle: 'Start with the plan your business needs today, and grow into the next one when you\'re ready.',
-              allTiersNote: 'Every plan includes Spanish and English support, unlimited users, and custom roles.',
               perMonth: 'per month',
               perYear: 'per year',
-              annualComingSoon: 'Annual price coming soon',
-              cta: 'I want this plan',
-              tierMessage: 'Hi, I\'d like more information about {tier}.',
-              currencyNote: 'Prices in Guatemalan quetzales (GTQ).',
+              comingSoonNote: 'Available by the end of 2026.',
+              featureColumnLabel: 'Feature',
+              currencyNoteByCountry: {
+                US: 'Prices in US dollars (USD).',
+                GT: 'Prices in Guatemalan quetzales (GTQ).',
+                HN: 'Prices in Honduran lempiras (HNL).'
+              },
               tiers: [
+                { id: 'tier1', name: 'iGroom Pro' },
+                { id: 'tier2', name: 'iGroom Advance' },
+                { id: 'tier3', name: 'iGroom Enterprise' }
+              ],
+              featureGroups: [
                 {
-                  id: 'tier1',
-                  name: 'iGroom Pro',
-                  priceMonthly: 'Q275',
-                  priceAnnual: 'Q3,150',
-                  prefix: '',
-                  features: [
-                    'Manage clients, pets, and appointments',
-                    'Calendar by month, week, and day',
-                    'Last-appointment report (no filters)',
-                    'Manage payments and balances'
+                  label: 'Included in every plan',
+                  rows: [
+                    { feature: 'Spanish and English localization', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Unlimited users', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Custom roles and permissions', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Manage clients, pets, and appointments', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Calendar by month, week, and day', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Manage payments and balances', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Last-appointment report (no filters)', tiers: ['tier1', 'tier2', 'tier3'], built: true },
+                    { feature: 'Manage services/products per appointment, per pet', tiers: ['tier1', 'tier2', 'tier3'], built: false },
+                    { feature: 'Photos per appointment (before and after)', tiers: ['tier1', 'tier2', 'tier3'], built: false }
                   ]
                 },
                 {
-                  id: 'tier2',
-                  name: 'iGroom Advance',
-                  priceMonthly: 'Q349',
-                  priceAnnual: 'Q4,000',
-                  prefix: 'Everything in iGroom Pro, plus:',
-                  features: [
-                    'Manage services/products per appointment',
-                    'Last-appointment report with day filters',
-                    'Appointments-per-month report (last 2 months)',
-                    'Total payments report (last month)',
-                    'Export all reports to Excel'
+                  label: 'Also with iGroom Advance',
+                  rows: [
+                    { feature: 'Automatic WhatsApp reminders', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Employee shift scheduling', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Basic inventory per appointment', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Team activity log', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Dashboard with reports (capped history)', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Last-appointment report with day filters', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Export all reports to Excel', tiers: ['tier2', 'tier3'], built: false }
                   ]
                 },
                 {
-                  id: 'tier3',
-                  name: 'iGroom Enterprise',
-                  priceMonthly: 'Q599',
-                  priceAnnual: '',
-                  prefix: 'Everything in iGroom Advance, plus:',
-                  features: [
-                    'Advanced reports with every filter',
-                    'Up to 12 months of history in all reports',
-                    'Manage stages per pet, per appointment',
-                    'Public tracking page for your clients'
+                  label: 'Also with iGroom Enterprise',
+                  rows: [
+                    { feature: 'Full dashboard, no history or filter limits', tiers: ['tier3'], built: false },
+                    { feature: 'Manage stages per pet, per appointment', tiers: ['tier3'], built: false },
+                    { feature: 'Public tracking page, with photos', tiers: ['tier3'], built: false },
+                    { feature: 'Client self-booking', tiers: ['tier3'], built: false },
+                    { feature: 'Full inventory with automatic deduction', tiers: ['tier3'], built: false },
+                    { feature: 'Full, exportable audit trail', tiers: ['tier3'], built: false }
                   ]
                 }
               ]
@@ -359,15 +439,56 @@
       },
       whatsappLink() {
         return 'https://wa.me/' + this.whatsappNumber + '?text=' + encodeURIComponent(this.t.hero.whatsappMessage);
+      },
+      countryList() {
+        return this.countryCodes.map(code => ({
+          code,
+          label: this.countryFlags[code] + '  ' + this.t.countryNames[code]
+        }));
       }
     },
     methods: {
       toggleLang() {
         this.lang = this.lang === 'es' ? 'en' : 'es';
       },
-      tierWhatsappLink(tierName) {
-        const message = this.t.pricing.tierMessage.replace('{tier}', tierName);
-        return 'https://wa.me/' + this.whatsappNumber + '?text=' + encodeURIComponent(message);
+      tierMonthlyPrice(tierId) {
+        return this.pricingByCountry[this.country][tierId].monthly;
+      },
+      tierAnnualPrice(tierId) {
+        return this.pricingByCountry[this.country][tierId].annual;
+      },
+      tierFeatureRows(tierId) {
+        const rows = [];
+        this.t.pricing.featureGroups.forEach(group => {
+          group.rows.forEach(row => {
+            if (row.tiers.includes(tierId)) rows.push(row);
+          });
+        });
+        return rows;
+      },
+      detectCountry() {
+        const ipinfoToken = '5b51fdcfac5412';
+
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 3000);
+        fetch('https://api.ipinfo.io/lite/me', {
+          headers: { Authorization: 'Bearer ' + ipinfoToken },
+          signal: controller.signal
+        })
+          .then(response => {
+            if (!response.ok) throw new Error('geo lookup failed');
+            return response.json();
+          })
+          .then(data => {
+            const code = data && data.country_code;
+            if (code && this.countryCodes.includes(code)) {
+              this.country = code;
+            }
+          })
+          .catch(() => {
+            // Network error, timeout, or unsupported country: keep the default (Guatemala).
+          })
+          .finally(() => clearTimeout(timeout));
       }
     },
     watch: {
@@ -377,6 +498,9 @@
           document.documentElement.lang = value;
         }
       }
+    },
+    mounted() {
+      this.detectCountry();
     }
   }).mount('#app');
 </script>
