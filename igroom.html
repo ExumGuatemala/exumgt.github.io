@@ -101,6 +101,7 @@
           <div class="tier-price">{{ tierMonthlyPrice(tier.id) }}</div>
           <div class="tier-price-period">{{ t.pricing.perMonth }}</div>
           <div class="tier-price-annual">{{ tierAnnualPrice(tier.id) }} {{ t.pricing.perYear }}</div>
+          <div class="tier-users">{{ tierUsersLabel(tier) }}</div>
           <ul class="tier-features">
             <li v-for="row in tierFeatureRows(tier.id)" :key="row.feature">
               {{ row.feature }}
@@ -120,6 +121,7 @@
                 <div class="plan-price">{{ tierMonthlyPrice(tier.id) }}</div>
                 <div class="plan-price-period">{{ t.pricing.perMonth }}</div>
                 <div class="plan-price-annual">{{ tierAnnualPrice(tier.id) }} {{ t.pricing.perYear }}</div>
+                <div class="plan-users">{{ tierUsersLabel(tier) }}</div>
               </th>
             </tr>
           </thead>
@@ -258,22 +260,22 @@
               perYear: 'por año',
               comingSoonNote: 'Disponible a fines de 2026.',
               featureColumnLabel: 'Función',
+              usersUpTo: 'Hasta {n} usuarios',
               currencyNoteByCountry: {
                 US: 'Precios en dólares estadounidenses (USD).',
                 GT: 'Precios en quetzales guatemaltecos (GTQ).',
                 HN: 'Precios en lempiras hondureñas (HNL).'
               },
               tiers: [
-                { id: 'tier1', name: 'iGroom Pro' },
-                { id: 'tier2', name: 'iGroom Advance' },
-                { id: 'tier3', name: 'iGroom Enterprise' }
+                { id: 'tier1', name: 'iGroom Pro', users: 10 },
+                { id: 'tier2', name: 'iGroom Advance', users: 15 },
+                { id: 'tier3', name: 'iGroom Enterprise', users: 20 }
               ],
               featureGroups: [
                 {
                   label: 'Incluido en todos los planes',
                   rows: [
                     { feature: 'Localización en español e inglés', tiers: ['tier1', 'tier2', 'tier3'], built: true },
-                    { feature: 'Usuarios ilimitados', tiers: ['tier1', 'tier2', 'tier3'], built: true },
                     { feature: 'Roles y permisos personalizados', tiers: ['tier1', 'tier2', 'tier3'], built: true },
                     { feature: 'Gestión de clientes, mascotas y citas', tiers: ['tier1', 'tier2', 'tier3'], built: true },
                     { feature: 'Calendario por mes, semana y día', tiers: ['tier1', 'tier2', 'tier3'], built: true },
@@ -285,23 +287,24 @@
                 {
                   label: 'Además, con iGroom Advance',
                   rows: [
-                    { feature: 'Recordatorios automáticos por WhatsApp', tiers: ['tier2', 'tier3'], built: false },
                     { feature: 'Horarios y turnos de empleados', tiers: ['tier2', 'tier3'], built: false },
                     { feature: 'Inventario básico por cita', tiers: ['tier2', 'tier3'], built: false },
                     { feature: 'Registro de actividad del equipo', tiers: ['tier2', 'tier3'], built: false },
                     { feature: 'Dashboard con reportes (historial limitado)', tiers: ['tier2', 'tier3'], built: false },
                     { feature: 'Reporte de última cita con filtros por día', tiers: ['tier2', 'tier3'], built: false },
-                    { feature: 'Exportar todos los reportes a Excel', tiers: ['tier2', 'tier3'], built: false }
+                    { feature: 'Exportar todos los reportes a Excel', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Múltiples sucursales (citas e inventario por sucursal)', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Recordatorios automáticos por WhatsApp', tiers: ['tier2', 'tier3'], built: false }
                   ]
                 },
                 {
                   label: 'Además, con iGroom Enterprise',
                   rows: [
-                    { feature: 'Dashboard completo, sin límites de historial ni filtros', tiers: ['tier3'], built: false },
+                    { feature: 'Dashboard completo, sin límites de historial ni filtros, con comparación entre sucursales', tiers: ['tier3'], built: false },
                     { feature: 'Gestión de etapas por mascota y cita', tiers: ['tier3'], built: false },
                     { feature: 'Fotos por cita (antes y después)', tiers: ['tier3'], built: false },
                     { feature: 'Página pública de seguimiento para tus clientes', tiers: ['tier3'], built: false },
-                    { feature: 'Auto-agendamiento de citas para tus clientes', tiers: ['tier3'], built: false },
+                    { feature: 'Auto-agendamiento de citas para tus clientes, eligiendo sucursal', tiers: ['tier3'], built: false },
                     { feature: 'Inventario completo con descuento automático', tiers: ['tier3'], built: false },
                     { feature: 'Auditoría completa y exportable', tiers: ['tier3'], built: false }
                   ]
@@ -370,22 +373,22 @@
               perYear: 'per year',
               comingSoonNote: 'Available by the end of 2026.',
               featureColumnLabel: 'Feature',
+              usersUpTo: 'Up to {n} users',
               currencyNoteByCountry: {
                 US: 'Prices in US dollars (USD).',
                 GT: 'Prices in Guatemalan quetzales (GTQ).',
                 HN: 'Prices in Honduran lempiras (HNL).'
               },
               tiers: [
-                { id: 'tier1', name: 'iGroom Pro' },
-                { id: 'tier2', name: 'iGroom Advance' },
-                { id: 'tier3', name: 'iGroom Enterprise' }
+                { id: 'tier1', name: 'iGroom Pro', users: 10 },
+                { id: 'tier2', name: 'iGroom Advance', users: 15 },
+                { id: 'tier3', name: 'iGroom Enterprise', users: 20 }
               ],
               featureGroups: [
                 {
                   label: 'Included in every plan',
                   rows: [
                     { feature: 'Spanish and English localization', tiers: ['tier1', 'tier2', 'tier3'], built: true },
-                    { feature: 'Unlimited users', tiers: ['tier1', 'tier2', 'tier3'], built: true },
                     { feature: 'Custom roles and permissions', tiers: ['tier1', 'tier2', 'tier3'], built: true },
                     { feature: 'Manage clients, pets, and appointments', tiers: ['tier1', 'tier2', 'tier3'], built: true },
                     { feature: 'Calendar by month, week, and day', tiers: ['tier1', 'tier2', 'tier3'], built: true },
@@ -397,23 +400,24 @@
                 {
                   label: 'Also with iGroom Advance',
                   rows: [
-                    { feature: 'Automatic WhatsApp reminders', tiers: ['tier2', 'tier3'], built: false },
                     { feature: 'Employee shift scheduling', tiers: ['tier2', 'tier3'], built: false },
                     { feature: 'Basic inventory per appointment', tiers: ['tier2', 'tier3'], built: false },
                     { feature: 'Team activity log', tiers: ['tier2', 'tier3'], built: false },
                     { feature: 'Dashboard with reports (capped history)', tiers: ['tier2', 'tier3'], built: false },
                     { feature: 'Last-appointment report with day filters', tiers: ['tier2', 'tier3'], built: false },
-                    { feature: 'Export all reports to Excel', tiers: ['tier2', 'tier3'], built: false }
+                    { feature: 'Export all reports to Excel', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Multiple branches (appointments and inventory per branch)', tiers: ['tier2', 'tier3'], built: false },
+                    { feature: 'Automatic WhatsApp reminders', tiers: ['tier2', 'tier3'], built: false }
                   ]
                 },
                 {
                   label: 'Also with iGroom Enterprise',
                   rows: [
-                    { feature: 'Full dashboard, no history or filter limits', tiers: ['tier3'], built: false },
+                    { feature: 'Full dashboard, no history or filter limits, with cross-branch comparison', tiers: ['tier3'], built: false },
                     { feature: 'Manage stages per pet, per appointment', tiers: ['tier3'], built: false },
                     { feature: 'Photos per appointment (before and after)', tiers: ['tier3'], built: false },
                     { feature: 'Public tracking page for your clients', tiers: ['tier3'], built: false },
-                    { feature: 'Client self-booking', tiers: ['tier3'], built: false },
+                    { feature: 'Client self-booking, choosing which branch', tiers: ['tier3'], built: false },
                     { feature: 'Full inventory with automatic deduction', tiers: ['tier3'], built: false },
                     { feature: 'Full, exportable audit trail', tiers: ['tier3'], built: false }
                   ]
@@ -456,6 +460,9 @@
       },
       tierAnnualPrice(tierId) {
         return this.pricingByCountry[this.country][tierId].annual;
+      },
+      tierUsersLabel(tier) {
+        return this.t.pricing.usersUpTo.replace('{n}', tier.users);
       },
       tierFeatureRows(tierId) {
         const rows = [];
