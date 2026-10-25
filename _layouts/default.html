@@ -32,6 +32,13 @@
 <meta property="og:title" content="{{ page.title }}">
 <meta property="og:description" content="{{ page.description }}">
 <meta property="og:image" content="{{ site.url }}{{ page.image }}">
+{% if page.lang == "en" %}
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_GT">
+{% else %}
+<meta property="og:locale" content="es_GT">
+<meta property="og:locale:alternate" content="en_US">
+{% endif %}
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
@@ -62,7 +69,9 @@
 {% assign t = site.data[page.lang][page.page_key] %}
 {% include nav.html %}
 
+<main>
 {{ content }}
+</main>
 
 {% include footer.html %}
 

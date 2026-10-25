@@ -108,7 +108,7 @@ body[data-country="HN"] .caption-for-country.country-HN {
   text-align: center;
 }
 
-.feature-text h3 {
+.feature-text h2 {
   font-size: 1.35rem;
   color: var(--color-gray);
   margin-bottom: 10px;
