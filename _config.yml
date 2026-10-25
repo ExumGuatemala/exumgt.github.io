@@ -20,9 +20,9 @@ defaults:
     values:
       sitemap: false
 
-# Google Analytics 4 measurement ID. Replace with the real ID once the
-# GA4 property exists (see docs/seo-plan.md, "Manual follow-ups").
-google_analytics_id: "G-XXXXXXXXXX"
+# Google Analytics 4 measurement ID.
+# The tag only renders in production builds (GitHub Pages), not local `jekyll serve`.
+google_analytics_id: "G-Y8F9ND3KMJ"
 
 company:
   name: "Exum"
