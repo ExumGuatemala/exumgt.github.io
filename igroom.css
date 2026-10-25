@@ -58,6 +58,7 @@ body[data-country="HN"] .caption-for-country.country-HN {
 
 .product-hero-logo {
   height: 100px;
+  width: auto;
   margin: 0 auto 28px;
 }
 
