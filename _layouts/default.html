@@ -54,14 +54,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:600,700,800">
 <link rel="stylesheet" href="/styles.css">
-{% if page.page_key == "igroom" %}
-<link rel="stylesheet" href="/igroom.css">
+{% if page.stylesheet %}
+<link rel="stylesheet" href="{{ page.stylesheet }}">
 {% endif %}
 
 {% if page.jsonld == "organization" %}
 {% include jsonld-organization.html %}
 {% elsif page.jsonld == "software" %}
 {% include jsonld-software.html %}
+{% elsif page.jsonld == "service" %}
+{% include jsonld-service.html %}
 {% endif %}
 </head>
 <body data-country="GT">

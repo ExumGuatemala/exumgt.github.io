@@ -296,9 +296,38 @@ img { max-width: 100%; height: auto; display: block; }
   }
 }
 
+/* Services */
+.services {
+  background: #ffffff;
+  padding: 64px 24px;
+}
+
+.services .product-card {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.service-tag {
+  display: inline-block;
+  background: var(--color-yellow);
+  color: var(--color-gray);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: var(--color-gray);
+  margin-bottom: 12px;
+}
+
 /* How & why */
 .why {
-  background: #ffffff;
+  background: #f7f7f7;
   padding: 64px 24px;
 }
 
@@ -349,7 +378,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* Team */
 .team {
-  background: #f7f7f7;
+  background: #ffffff;
   padding: 64px 24px;
 }
 

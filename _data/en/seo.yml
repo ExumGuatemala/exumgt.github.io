@@ -1,0 +1,93 @@
+nav:
+  home: Home
+  included: "What's included"
+  process: "How it works"
+  faq: FAQ
+  contact: Contact
+
+hero:
+  tag: SEO
+  title: "Show up on Google."
+  subtitle: "We build your website so Google understands it and shows it to people searching for what you offer. No jargon: you focus on your business, we make sure people find it."
+  cta: "I want to show up on Google"
+  whatsappMessage: "Hi, I want my business to show up on Google."
+
+included:
+  title: "What's included"
+  subtitle: "Everything Google needs to find you, understand you, and show you."
+  technicalLabel: "Technically:"
+  items:
+    - title: "A site Google can read"
+      description: "Your business information is written right into the page, not hidden. Google, WhatsApp, and Facebook can read it on the first try."
+      technical: "content in HTML, not dependent on JavaScript."
+    - title: "Fast and built for phones"
+      description: "Most of your customers search from their phone. Your site loads fast and looks right there first."
+      technical: "mobile-first design and optimized images."
+    - title: "One official address"
+      description: "With or without www, with or without https: everyone lands in the same place, and Google never mistakes your site for two duplicate sites."
+      technical: "301 redirects, canonical URL, sitemap.xml, and robots.txt."
+    - title: "Google understands your business"
+      description: "We tell Google who you are, what you offer, and how to reach you, in the format it understands."
+      technical: "titles, descriptions, and structured data (JSON-LD)."
+    - title: "Looks great when shared"
+      description: "When someone sends your link on WhatsApp or Facebook, it shows up with an image, title, and description, not a bare link."
+      technical: "Open Graph and Twitter Card tags."
+    - title: "In Spanish and English, if you need it"
+      description: "If you also serve customers in other countries, each language gets its own page and Google shows each person the right one."
+      technical: "one URL per language with hreflang tags."
+    - title: "Google knows you exist"
+      description: "We register your site with Google and ask it to take a look, instead of waiting for it to find you on its own."
+      technical: "Google Search Console, submitted sitemap, and indexing requests."
+    - title: "You know who visits and who reaches out"
+      description: "We measure how many people visit your site and how many message you on WhatsApp from it."
+      technical: "Google Analytics 4 with contact events."
+
+process:
+  title: "How it works"
+  subtitle: "Four steps. You're only needed for the first and the last."
+  steps:
+    - title: "We talk"
+      description: "You tell us about your business, what you offer, and how your customers look for it."
+    - title: "We build your site"
+      description: "Simple, fast, and ready for Google from day one."
+    - title: "We connect it to Google"
+      description: "We register your site, send Google the list of your pages, and turn on measurement."
+    - title: "We walk you through the numbers"
+      description: "We show you, in plain words, how people find you and how many reach out."
+
+monthly:
+  title: "After launch: monthly follow-up"
+  subtitle: "Optional. Google favors sites that stay active, and you don't have to do it alone."
+  items:
+    - title: "A plain-language monthly report"
+      description: "How many people found you, what they searched for, and how many reached out. No complicated charts."
+    - title: "Articles for your site"
+      description: "We write about your customers' real questions. Every article is one more way for people to find you."
+    - title: "Tweaks and improvements"
+      description: "If a page gets visits but few messages, we improve it. If something stops working, we fix it."
+
+faq:
+  title: "Frequently asked questions"
+  items:
+    - question: "What is SEO?"
+      answer: "It stands for Search Engine Optimization. In plain words: making Google understand your site and show it to people looking for what you offer."
+    - question: "How long until my business shows up on Google?"
+      answer: "Google usually looks at a new site within a few days, but climbing the results takes weeks or months. It depends on how much competition there is in your type of business and your city."
+    - question: "Do you guarantee the top spot?"
+      answer: "No. Nobody can guarantee the top spot on Google, and it's wise to be wary of anyone who promises it. What we do is make sure your site has everything Google needs to show it."
+    - question: "I already have a website. Can you work on it?"
+      answer: "For now, we only do SEO on sites we build ourselves, so we can make sure everything is right from the ground up. If you already have a site, we can build you a new one with the same information."
+    - question: "Do I need to be good with technology?"
+      answer: "No. We take care of everything and explain the results in plain words."
+    - question: "Will the domain and hosting be in my name?"
+      answer: "Your choice. The domain (your address, like yourbusiness.com) and the hosting (where your site lives) can be in your name or Exum's. Both work."
+    - question: "How much does it cost?"
+      answer: "It depends on the size of your site and whether you want monthly follow-up. Message us on WhatsApp for a free, no-commitment quote."
+
+contact:
+  title: "Want to show up on Google?"
+  subtitle: "Message us and we'll go over what your business needs, together."
+  whatsappCta: "Message us on WhatsApp"
+
+footer:
+  copyright: "© 2026 Exum. All rights reserved."

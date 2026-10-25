@@ -1,13 +1,14 @@
 nav:
   home: Home
   products: Products
+  services: Services
   why: "Why us"
   team: Team
   contact: Contact
 
 hero:
   title: "Simple software for real businesses."
-  subtitle: "Ready-to-use software, built for businesses like yours. Find the right product for your business and get started today."
+  subtitle: "Ready-to-use software, built for businesses like yours. Find the right service for your business and get started today."
   cta: "Let's talk"
 
 products:
@@ -33,6 +34,18 @@ products:
       logo: /images/exum/icase_logo.webp
       href: /en/icase/
       visible: false
+
+services:
+  title: "Our services"
+  subtitle: "What we know how to do for ourselves, we now do for your business."
+  cta: "Learn more"
+  items:
+    - id: seo
+      tag: SEO
+      title: "Show up on Google"
+      description: "We build your website so Google understands it and shows it to people searching for what you offer."
+      href: /en/services/seo/
+      visible: true
 
 why:
   title: "How and why we build"

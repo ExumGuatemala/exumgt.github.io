@@ -3,7 +3,7 @@ layout: default
 lang: es
 page_key: home
 title: "Exum - Software simple para negocios reales | iGroom"
-description: "Exum crea software simple y enfocado para negocios reales: iGroom para grooming, iWear para textiles e iCase para abogados."
+description: "Exum crea software simple y enfocado para negocios reales, como iGroom para negocios de grooming, y sitios web que aparecen en Google."
 image: /images/exum/og-image.png
 hreflang_es: /
 hreflang_en: /en/
@@ -38,6 +38,28 @@ permalink: /
         </div>
         <p>{{ product.description }}</p>
         <a href="{{ product.href }}" class="product-link">{{ t.products.cta }}</a>
+      </article>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="servicios" class="services">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.services.title }}</h2>
+      <p>{{ t.services.subtitle }}</p>
+    </div>
+
+    <div class="products-grid">
+      {% for service in t.services.items %}
+      {% if service.visible %}
+      <article class="product-card service-card">
+        <span class="service-tag">{{ service.tag }}</span>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <a href="{{ service.href }}" class="product-link">{{ t.services.cta }}</a>
       </article>
       {% endif %}
       {% endfor %}

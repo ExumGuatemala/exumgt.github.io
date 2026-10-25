@@ -6,6 +6,11 @@
     <a href="{{ product.href }}">{{ product.name }}</a>
     {% endif %}
     {% endfor %}
+    {% for service in t.services.items %}
+    {% if service.visible %}
+    <a href="{{ service.href }}">{{ service.title }}</a>
+    {% endif %}
+    {% endfor %}
     {% else %}
     <a href="{{ page.home_url }}">Exum</a>
     {% endif %}

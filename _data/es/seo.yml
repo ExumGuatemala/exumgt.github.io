@@ -1,0 +1,93 @@
+nav:
+  home: Inicio
+  included: "Qué incluye"
+  process: "Cómo funciona"
+  faq: Preguntas
+  contact: Contacto
+
+hero:
+  tag: SEO
+  title: "Aparece en Google."
+  subtitle: "Construimos tu sitio web para que Google lo entienda y lo muestre a las personas que buscan lo que ofreces. Sin palabras raras: tú te enfocas en tu negocio, nosotros en que te encuentren."
+  cta: "Quiero aparecer en Google"
+  whatsappMessage: "Hola, quiero que mi negocio aparezca en Google."
+
+included:
+  title: "Qué incluye"
+  subtitle: "Todo lo que Google necesita para encontrarte, entenderte y mostrarte."
+  technicalLabel: "Técnicamente:"
+  items:
+    - title: "Un sitio que Google puede leer"
+      description: "La información de tu negocio queda escrita directamente en la página, no escondida. Así Google, WhatsApp y Facebook la leen a la primera."
+      technical: "contenido en HTML, sin depender de JavaScript."
+    - title: "Rápido y pensado para el teléfono"
+      description: "La mayoría de tus clientes te buscan desde el celular. Tu sitio carga rápido y se ve bien ahí primero."
+      technical: "diseño mobile first e imágenes optimizadas."
+    - title: "Una sola dirección oficial"
+      description: "Con o sin www, con o sin https: todos llegan al mismo lugar, y Google no confunde tu sitio con dos sitios repetidos."
+      technical: "redirecciones 301, URL canónica, sitemap.xml y robots.txt."
+    - title: "Google entiende qué es tu negocio"
+      description: "Le explicamos a Google quién eres, qué ofreces y cómo contactarte, en el formato que él entiende."
+      technical: "títulos, descripciones y datos estructurados (JSON-LD)."
+    - title: "Se ve bien cuando lo compartes"
+      description: "Cuando alguien envía tu enlace por WhatsApp o Facebook, aparece con imagen, título y descripción, no como un enlace vacío."
+      technical: "etiquetas Open Graph y Twitter Cards."
+    - title: "En español y en inglés, si lo necesitas"
+      description: "Si también atiendes clientes de otros países, cada idioma tiene su propia página y Google muestra la correcta a cada persona."
+      technical: "una URL por idioma con etiquetas hreflang."
+    - title: "Google sabe que existes"
+      description: "Registramos tu sitio con Google y le pedimos que lo revise, en lugar de esperar a que lo encuentre solo."
+      technical: "Google Search Console, sitemap enviado y solicitud de indexación."
+    - title: "Sabes quién te visita y quién te escribe"
+      description: "Medimos cuántas personas visitan tu sitio y cuántas te escriben por WhatsApp desde él."
+      technical: "Google Analytics 4 con eventos de contacto."
+
+process:
+  title: "Cómo funciona"
+  subtitle: "Cuatro pasos. Tú solo participas en el primero y en el último."
+  steps:
+    - title: "Hablamos"
+      description: "Nos cuentas de tu negocio, qué ofreces y cómo te buscan tus clientes."
+    - title: "Construimos tu sitio"
+      description: "Lo diseñamos simple, rápido y listo para Google desde el primer día."
+    - title: "Lo conectamos con Google"
+      description: "Registramos tu sitio, le enviamos a Google la lista de tus páginas y activamos las mediciones."
+    - title: "Te explicamos los números"
+      description: "Te mostramos, en palabras simples, cómo te encuentran y cuántas personas te escriben."
+
+monthly:
+  title: "Después: acompañamiento mensual"
+  subtitle: "Opcional. Google prefiere los sitios que se mantienen activos, y tú no tienes por qué hacerlo solo."
+  items:
+    - title: "Reporte mensual en palabras simples"
+      description: "Cuántas personas te encontraron, qué buscaron y cuántas te escribieron. Sin gráficas complicadas."
+    - title: "Artículos para tu sitio"
+      description: "Escribimos sobre las preguntas reales de tus clientes. Cada artículo es una puerta más para que te encuentren."
+    - title: "Ajustes y mejoras"
+      description: "Si una página recibe visitas pero pocos mensajes, la mejoramos. Si algo deja de funcionar, lo arreglamos."
+
+faq:
+  title: "Preguntas frecuentes"
+  items:
+    - question: "¿Qué es SEO?"
+      answer: "Son las siglas en inglés de «optimización para motores de búsqueda». En palabras simples: hacer que Google entienda tu sitio y lo muestre a las personas que buscan lo que ofreces."
+    - question: "¿Cuánto tarda mi negocio en aparecer en Google?"
+      answer: "Google suele revisar un sitio nuevo en pocos días, pero subir en los resultados toma semanas o meses. Depende de cuánta competencia haya en tu tipo de negocio y en tu ciudad."
+    - question: "¿Me garantizan el primer lugar?"
+      answer: "No. Nadie puede garantizar el primer lugar en Google, y conviene desconfiar de quien lo prometa. Lo que sí hacemos es que tu sitio cumpla con todo lo que Google necesita para mostrarlo."
+    - question: "Ya tengo un sitio web. ¿Pueden trabajar sobre él?"
+      answer: "Por ahora trabajamos el SEO solo en sitios que construimos nosotros, porque así podemos asegurar que todo quede bien desde la base. Si ya tienes un sitio, podemos construirte uno nuevo con tu misma información."
+    - question: "¿Necesito saber de tecnología?"
+      answer: "No. Nosotros nos encargamos de todo y te explicamos los resultados en palabras simples."
+    - question: "¿El dominio y el hosting quedan a mi nombre?"
+      answer: "Como prefieras. El dominio (tu dirección, como tunegocio.com) y el hosting (donde vive tu sitio) pueden estar a tu nombre o a nombre de Exum. Las dos opciones funcionan."
+    - question: "¿Cuánto cuesta?"
+      answer: "Depende del tamaño de tu sitio y de si quieres acompañamiento mensual. Escríbenos por WhatsApp y te damos una cotización sin compromiso."
+
+contact:
+  title: "¿Quieres aparecer en Google?"
+  subtitle: "Escríbenos y revisamos juntos qué necesita tu negocio."
+  whatsappCta: "Escríbenos por WhatsApp"
+
+footer:
+  copyright: "© 2026 Exum. Todos los derechos reservados."

@@ -1,13 +1,14 @@
 nav:
   home: Inicio
   products: Productos
+  services: Servicios
   why: "Por qué"
   team: Equipo
   contact: Contacto
 
 hero:
   title: "Software simple para negocios reales."
-  subtitle: "Software listo para usar, diseñado para negocios como el tuyo. Descubre el producto ideal para tu negocio y empieza hoy mismo."
+  subtitle: "Software listo para usar, diseñado para negocios como el tuyo. Descubre el servicio ideal para tu negocio y empieza hoy mismo."
   cta: "Hablemos"
 
 products:
@@ -33,6 +34,18 @@ products:
       logo: /images/exum/icase_logo.webp
       href: /icase/
       visible: false
+
+services:
+  title: "Nuestros servicios"
+  subtitle: "Lo que sabemos hacer para nosotros, ahora lo hacemos para tu negocio."
+  cta: "Conocer más"
+  items:
+    - id: seo
+      tag: SEO
+      title: "Aparece en Google"
+      description: "Construimos tu sitio web para que Google lo entienda y lo muestre a las personas que buscan lo que ofreces."
+      href: /servicios/seo/
+      visible: true
 
 why:
   title: "Cómo y por qué lo hacemos"

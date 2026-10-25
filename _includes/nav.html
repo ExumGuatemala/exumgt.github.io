@@ -18,17 +18,22 @@
   </button>
 
   <div class="nav-links" id="nav-links">
-    {% if page.page_key == "igroom" %}
+    {% if page.page_key != "home" %}
     <a href="{{ page.home_url }}">Exum</a>
     {% endif %}
     <a href="#inicio">{{ t.nav.home }}</a>
     {% if page.page_key == "home" %}
     <a href="#productos">{{ t.nav.products }}</a>
+    <a href="#servicios">{{ t.nav.services }}</a>
     <a href="#por-que">{{ t.nav.why }}</a>
     <a href="#equipo">{{ t.nav.team }}</a>
-    {% else %}
+    {% elsif page.page_key == "igroom" %}
     <a href="#funciones">{{ t.nav.features }}</a>
     <a href="#precios">{{ t.nav.pricing }}</a>
+    {% elsif page.page_key == "seo" %}
+    <a href="#que-incluye">{{ t.nav.included }}</a>
+    <a href="#como-funciona">{{ t.nav.process }}</a>
+    <a href="#preguntas">{{ t.nav.faq }}</a>
     {% endif %}
     <a href="#contacto">{{ t.nav.contact }}</a>
 

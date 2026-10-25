@@ -1,0 +1,113 @@
+---
+layout: default
+lang: es
+page_key: seo
+title: "SEO para negocios: aparece en Google | Exum"
+description: "Construimos tu sitio web listo para Google: rápido, fácil de encontrar y con mediciones claras. Servicio de SEO de Exum para negocios en Guatemala."
+image: /images/exum/og-image.png
+hreflang_es: /servicios/seo/
+hreflang_en: /en/services/seo/
+lang_switch_url: /en/services/seo/
+lang_switch_label: EN
+home_url: /
+jsonld: service
+stylesheet: /service.css
+permalink: /servicios/seo/
+---
+{% assign t = site.data[page.lang][page.page_key] %}
+{% assign whatsapp_href = "https://wa.me/" | append: site.company.whatsapp | append: "?text=" | append: t.hero.whatsappMessage | uri_escape %}
+
+<header id="inicio" class="hero">
+  <div class="hero-content">
+    <span class="service-tag">{{ t.hero.tag }}</span>
+    <h1>{{ t.hero.title }}</h1>
+    <p>{{ t.hero.subtitle }}</p>
+    <a href="{{ whatsapp_href }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="hero_seo">{{ t.hero.cta }}</a>
+  </div>
+</header>
+
+<section id="que-incluye" class="svc-section svc-section-alt" aria-labelledby="que-incluye-title">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2 id="que-incluye-title">{{ t.included.title }}</h2>
+      <p>{{ t.included.subtitle }}</p>
+    </div>
+
+    <div class="svc-grid">
+      {% for item in t.included.items %}
+      <article class="svc-card">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <p class="svc-technical"><strong>{{ t.included.technicalLabel }}</strong> {{ item.technical }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" class="svc-section" aria-labelledby="como-funciona-title">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2 id="como-funciona-title">{{ t.process.title }}</h2>
+      <p>{{ t.process.subtitle }}</p>
+    </div>
+
+    <ol class="svc-steps">
+      {% for step in t.process.steps %}
+      <li>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section id="acompanamiento" class="svc-section svc-section-alt" aria-labelledby="acompanamiento-title">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2 id="acompanamiento-title">{{ t.monthly.title }}</h2>
+      <p>{{ t.monthly.subtitle }}</p>
+    </div>
+
+    <div class="svc-grid svc-grid-3">
+      {% for item in t.monthly.items %}
+      <article class="svc-card">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="preguntas" class="svc-section" aria-labelledby="preguntas-title">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2 id="preguntas-title">{{ t.faq.title }}</h2>
+    </div>
+
+    <div class="svc-faq">
+      {% for item in t.faq.items %}
+      <details>
+        <summary>{{ item.question }}</summary>
+        <p>{{ item.answer }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.contact.title }}</h2>
+      <p>{{ t.contact.subtitle }}</p>
+    </div>
+
+    <div class="contact-actions">
+      <a href="{{ whatsapp_href }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="contacto_seo">{{ t.contact.whatsappCta }}</a>
+      <a href="mailto:{{ site.company.email }}" class="contact-email" data-evento="clic_email" data-ubicacion="contacto_seo">{{ site.company.email }}</a>
+    </div>
+  </div>
+</section>
