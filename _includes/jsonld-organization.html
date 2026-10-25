@@ -1,0 +1,27 @@
+{% assign t = site.data[page.lang][page.page_key] %}
+{% assign founder = t.team.members | where: "visible", true | first %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "{{ site.url }}/#organization",
+  "name": "{{ site.company.name }}",
+  "description": "{{ page.description }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "logo": "{{ site.url }}{{ site.company.logo }}",
+  "image": "{{ site.url }}{{ site.company.logo }}",
+  "email": "{{ site.company.email }}",
+  "founder": {
+    "@type": "Person",
+    "name": "{{ founder.name }}",
+    "jobTitle": "{{ founder.role }}"
+  },
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "{{ founder.name }}",
+      "jobTitle": "{{ founder.role }}"
+    }
+  ]
+}
+</script>

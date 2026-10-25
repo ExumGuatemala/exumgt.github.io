@@ -1,0 +1,26 @@
+{% assign t = site.data[page.lang][page.page_key] %}
+{% assign pricing = site.data["igroom-pricing"] %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "iGroom",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "{{ site.url }}{{ page.url }}",
+  "description": "{{ page.description }}",
+  "image": "{{ site.url }}{{ page.image }}",
+  "brand": { "@type": "Organization", "name": "{{ site.company.name }}" },
+  "offers": [
+    {% for tier in t.pricing.tiers %}
+    {
+      "@type": "Offer",
+      "name": "{{ tier.name }}",
+      "price": "{{ pricing.GT[tier.id].monthly | remove: 'Q' }}",
+      "priceCurrency": "GTQ",
+      "url": "{{ site.url }}{{ page.url }}#precios"
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>

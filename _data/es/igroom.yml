@@ -1,0 +1,98 @@
+nav:
+  home: Inicio
+  features: Funciones
+  pricing: Precios
+  contact: Contacto
+  countryLabel: "País"
+
+countryNames:
+  US: "Estados Unidos"
+  GT: "Guatemala"
+  HN: "Honduras"
+
+hero:
+  title: "El software simple para tu negocio de grooming."
+  subtitle: "Organiza citas, clientes y mascotas en un solo lugar. Deja el papeleo atrás y enfócate en lo que más importa: tus clientes peludos."
+  cta: "Quiero probar iGroom"
+  whatsappMessage: "Hola, quiero saber más sobre iGroom."
+
+features:
+  - id: calendar
+    title: "Calendario flexible"
+    description: "Mira tu día, semana o mes completo de un vistazo, y agenda citas nuevas en segundos."
+    image: /images/igroom/igroom_week_calendar.webp
+    width: 1610
+    height: 911
+  - id: clients
+    title: "Clientes y mascotas en un solo lugar"
+    description: "Cada cliente con su información de contacto, notas y mascotas, todo conectado a su historial de citas."
+    image: /images/igroom/igroom_client_view.webp
+    width: 1610
+    height: 915
+  - id: appointments
+    title: "Citas sin complicaciones"
+    description: "Crea una cita en un formulario simple: cliente, horario y notas especiales para el groomer."
+    image: /images/igroom/igroom_appointment_creation.webp
+    width: 1611
+    height: 917
+  - id: reports
+    title: "Reportes que te ayudan a vender más"
+    description: "Identifica a los clientes que no han vuelto y contáctalos antes de perderlos."
+    image: /images/igroom/igroom_active_clients_report.webp
+    width: 1600
+    height: 912
+
+pricing:
+  title: "Planes y precios"
+  subtitle: "Empieza con el plan que tu negocio necesita hoy, y crece al siguiente cuando estés listo."
+  perMonth: "por mes"
+  perYear: "por año"
+  comingSoonNote: "Disponible a fines de 2026."
+  featureColumnLabel: "Función"
+  usersUpToPrefix: "Hasta "
+  usersUpToSuffix: " usuarios"
+  currencyNoteByCountry:
+    US: "Precios en dólares estadounidenses (USD)."
+    GT: "Precios en quetzales guatemaltecos (GTQ)."
+    HN: "Precios en lempiras hondureñas (HNL)."
+  tiers:
+    - { id: tier1, name: "iGroom Pro", users: 10 }
+    - { id: tier2, name: "iGroom Advance", users: 15 }
+    - { id: tier3, name: "iGroom Enterprise", users: 20 }
+  featureGroups:
+    - label: "Incluido en todos los planes"
+      rows:
+        - { feature: "Localización en español e inglés", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Roles y permisos personalizados", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Gestión de clientes, mascotas y citas", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Calendario por mes, semana y día", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Gestión de pagos y saldos", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Reporte de última cita (sin filtros)", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Gestión de servicios y productos por cita, por mascota", tiers: [tier1, tier2, tier3], built: true }
+    - label: "Además, con iGroom Advance"
+      rows:
+        - { feature: "Horarios y turnos de empleados", tiers: [tier2, tier3], built: false }
+        - { feature: "Inventario básico por cita", tiers: [tier2, tier3], built: false }
+        - { feature: "Registro de actividad del equipo", tiers: [tier2, tier3], built: false }
+        - { feature: "Dashboard con reportes (historial limitado)", tiers: [tier2, tier3], built: false }
+        - { feature: "Reporte de última cita con filtros por día", tiers: [tier2, tier3], built: false }
+        - { feature: "Exportar todos los reportes a Excel", tiers: [tier2, tier3], built: false }
+        - { feature: "Múltiples sucursales (citas e inventario por sucursal)", tiers: [tier2, tier3], built: false }
+        - { feature: "Recordatorios automáticos por WhatsApp", tiers: [tier2, tier3], built: false }
+    - label: "Además, con iGroom Enterprise"
+      rows:
+        - { feature: "Dashboard completo, sin límites de historial ni filtros, con comparación entre sucursales", tiers: [tier3], built: false }
+        - { feature: "Gestión de etapas por mascota y cita", tiers: [tier3], built: false }
+        - { feature: "Fotos por cita (antes y después)", tiers: [tier3], built: false }
+        - { feature: "Página pública de seguimiento para tus clientes", tiers: [tier3], built: false }
+        - { feature: "Auto-agendamiento de citas para tus clientes, eligiendo sucursal", tiers: [tier3], built: false }
+        - { feature: "Inventario completo con descuento automático", tiers: [tier3], built: false }
+        - { feature: "Auditoría completa y exportable", tiers: [tier3], built: false }
+
+contact:
+  title: "Empieza con iGroom"
+  subtitle: "¿Listo para empezar? Escríbenos y te ayudamos a activar tu cuenta."
+  whatsappCta: "Escríbenos por WhatsApp"
+
+footer:
+  copyright: "© 2026 Exum. Todos los derechos reservados."

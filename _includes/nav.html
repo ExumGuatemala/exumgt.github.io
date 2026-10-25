@@ -1,0 +1,51 @@
+<nav class="navbar">
+  <a href="#inicio" class="navbar-brand">
+    {% if page.page_key == "igroom" %}
+    <img src="/images/exum/igroom_logo.webp" alt="iGroom" width="3300" height="1808" style="height:32px;width:auto;">
+    {% else %}
+    <img src="{{ site.company.logo }}" alt="Exum" width="4459" height="1140" style="height:32px;width:auto;">
+    {% endif %}
+  </a>
+
+  <button
+    class="nav-toggle"
+    id="nav-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-label="Menu"
+  >
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-links" id="nav-links">
+    {% if page.page_key == "igroom" %}
+    <a href="{{ page.home_url }}">Exum</a>
+    {% endif %}
+    <a href="#inicio">{{ t.nav.home }}</a>
+    {% if page.page_key == "home" %}
+    <a href="#productos">{{ t.nav.products }}</a>
+    <a href="#por-que">{{ t.nav.why }}</a>
+    <a href="#equipo">{{ t.nav.team }}</a>
+    {% else %}
+    <a href="#funciones">{{ t.nav.features }}</a>
+    <a href="#precios">{{ t.nav.pricing }}</a>
+    {% endif %}
+    <a href="#contacto">{{ t.nav.contact }}</a>
+
+    {% if page.page_key == "igroom" %}
+    <select class="country-switch" id="country-switch" aria-label="{{ t.nav.countryLabel }}">
+      {% assign country_codes = "US,GT,HN" | split: "," %}
+      {% for code in country_codes %}
+      {% case code %}
+        {% when "US" %}{% assign flag = "🇺🇸" %}
+        {% when "GT" %}{% assign flag = "🇬🇹" %}
+        {% when "HN" %}{% assign flag = "🇭🇳" %}
+      {% endcase %}
+      <option value="{{ code }}"{% if code == "GT" %} selected{% endif %}>{{ flag }}&nbsp;&nbsp;{{ t.countryNames[code] }}</option>
+      {% endfor %}
+    </select>
+    {% endif %}
+
+    <a class="lang-switch" href="{{ page.lang_switch_url }}">{{ page.lang_switch_label }}</a>
+  </div>
+</nav>

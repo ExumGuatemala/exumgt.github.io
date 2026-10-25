@@ -1,0 +1,106 @@
+---
+layout: default
+lang: en
+page_key: home
+title: "Exum - Simple software for real businesses | iGroom, iWear, iCase"
+description: "Exum builds simple, focused software for real businesses: iGroom for grooming, iWear for textiles, and iCase for lawyers."
+image: /images/exum/og-image.png
+hreflang_es: /
+hreflang_en: /en/
+lang_switch_url: /
+lang_switch_label: ES
+jsonld: organization
+permalink: /en/
+---
+{% assign t = site.data[page.lang][page.page_key] %}
+
+<header id="inicio" class="hero">
+  <div class="hero-content">
+    <h1>{{ t.hero.title }}</h1>
+    <p>{{ t.hero.subtitle }}</p>
+    <a href="https://wa.me/{{ site.company.whatsapp }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="hero">{{ t.hero.cta }}</a>
+  </div>
+</header>
+
+<section id="productos" class="products">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.products.title }}</h2>
+      <p>{{ t.products.subtitle }}</p>
+    </div>
+
+    <div class="products-grid">
+      {% for product in t.products.items %}
+      {% if product.visible %}
+      <article class="product-card">
+        <div class="product-logo">
+          <img src="{{ product.logo }}" alt="{{ product.name }}" width="3300" height="1808" loading="lazy">
+        </div>
+        <p>{{ product.description }}</p>
+        <a href="{{ product.href }}" class="product-link">{{ t.products.cta }}</a>
+      </article>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="por-que" class="why">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.why.title }}</h2>
+      <p>{{ t.why.subtitle }}</p>
+    </div>
+
+    <div class="why-grid">
+      {% for item in t.why.items %}
+      <div class="why-item">
+        <div class="why-icon">{{ item.icon }}</div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="equipo" class="team">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.team.title }}</h2>
+      <p>{{ t.team.subtitle }}</p>
+    </div>
+
+    <div class="team-grid">
+      {% for member in t.team.members %}
+      {% if member.visible %}
+      <div class="team-card">
+        <div class="team-photo">
+          {% if member.photo %}
+          <img src="{{ member.photo }}" alt="{{ member.name }}" width="736" height="1121" loading="lazy">
+          {% else %}
+          <span class="team-initials">{{ member.initials }}</span>
+          {% endif %}
+        </div>
+        <h3>{{ member.name }}</h3>
+        <p class="team-role">{{ member.role }}</p>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.contact.title }}</h2>
+      <p>{{ t.contact.subtitle }}</p>
+    </div>
+
+    <div class="contact-actions">
+      <a href="https://wa.me/{{ site.company.whatsapp }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="contacto">{{ t.contact.whatsappCta }}</a>
+      <a href="mailto:{{ site.company.email }}" class="contact-email" data-evento="clic_email" data-ubicacion="contacto">{{ site.company.email }}</a>
+    </div>
+  </div>
+</section>

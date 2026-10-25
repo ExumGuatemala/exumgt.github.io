@@ -1,0 +1,98 @@
+nav:
+  home: Home
+  features: Features
+  pricing: Pricing
+  contact: Contact
+  countryLabel: "Country"
+
+countryNames:
+  US: "United States"
+  GT: "Guatemala"
+  HN: "Honduras"
+
+hero:
+  title: "The simple software for your grooming business."
+  subtitle: "Manage appointments, clients, and pets in one place. Ditch the paperwork and focus on what matters most: your furry clients."
+  cta: "I want to try iGroom"
+  whatsappMessage: "Hi, I'd like to know more about iGroom."
+
+features:
+  - id: calendar
+    title: "Flexible calendar"
+    description: "See your whole day, week, or month at a glance, and book new appointments in seconds."
+    image: /images/igroom/igroom_week_calendar.webp
+    width: 1610
+    height: 911
+  - id: clients
+    title: "Clients and pets in one place"
+    description: "Every client with their contact info, notes, and pets — all connected to their appointment history."
+    image: /images/igroom/igroom_client_view.webp
+    width: 1610
+    height: 915
+  - id: appointments
+    title: "Appointments made simple"
+    description: "Create an appointment with a simple form: client, time, and special notes for the groomer."
+    image: /images/igroom/igroom_appointment_creation.webp
+    width: 1611
+    height: 917
+  - id: reports
+    title: "Reports that help you sell more"
+    description: "Spot clients who haven't been back and reach out before you lose them."
+    image: /images/igroom/igroom_active_clients_report.webp
+    width: 1600
+    height: 912
+
+pricing:
+  title: "Plans and pricing"
+  subtitle: "Start with the plan your business needs today, and grow into the next one when you're ready."
+  perMonth: "per month"
+  perYear: "per year"
+  comingSoonNote: "Available by the end of 2026."
+  featureColumnLabel: "Feature"
+  usersUpToPrefix: "Up to "
+  usersUpToSuffix: " users"
+  currencyNoteByCountry:
+    US: "Prices in US dollars (USD)."
+    GT: "Prices in Guatemalan quetzales (GTQ)."
+    HN: "Prices in Honduran lempiras (HNL)."
+  tiers:
+    - { id: tier1, name: "iGroom Pro", users: 10 }
+    - { id: tier2, name: "iGroom Advance", users: 15 }
+    - { id: tier3, name: "iGroom Enterprise", users: 20 }
+  featureGroups:
+    - label: "Included in every plan"
+      rows:
+        - { feature: "Spanish and English localization", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Custom roles and permissions", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Manage clients, pets, and appointments", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Calendar by month, week, and day", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Manage payments and balances", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Last-appointment report (no filters)", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Manage services/products per appointment, per pet", tiers: [tier1, tier2, tier3], built: true }
+    - label: "Also with iGroom Advance"
+      rows:
+        - { feature: "Employee shift scheduling", tiers: [tier2, tier3], built: false }
+        - { feature: "Basic inventory per appointment", tiers: [tier2, tier3], built: false }
+        - { feature: "Team activity log", tiers: [tier2, tier3], built: false }
+        - { feature: "Dashboard with reports (capped history)", tiers: [tier2, tier3], built: false }
+        - { feature: "Last-appointment report with day filters", tiers: [tier2, tier3], built: false }
+        - { feature: "Export all reports to Excel", tiers: [tier2, tier3], built: false }
+        - { feature: "Multiple branches (appointments and inventory per branch)", tiers: [tier2, tier3], built: false }
+        - { feature: "Automatic WhatsApp reminders", tiers: [tier2, tier3], built: false }
+    - label: "Also with iGroom Enterprise"
+      rows:
+        - { feature: "Full dashboard, no history or filter limits, with cross-branch comparison", tiers: [tier3], built: false }
+        - { feature: "Manage stages per pet, per appointment", tiers: [tier3], built: false }
+        - { feature: "Photos per appointment (before and after)", tiers: [tier3], built: false }
+        - { feature: "Public tracking page for your clients", tiers: [tier3], built: false }
+        - { feature: "Client self-booking, choosing which branch", tiers: [tier3], built: false }
+        - { feature: "Full inventory with automatic deduction", tiers: [tier3], built: false }
+        - { feature: "Full, exportable audit trail", tiers: [tier3], built: false }
+
+contact:
+  title: "Get started with iGroom"
+  subtitle: "Ready to get started? Message us and we'll help you get set up."
+  whatsappCta: "Message us on WhatsApp"
+
+footer:
+  copyright: "© 2026 Exum. All rights reserved."

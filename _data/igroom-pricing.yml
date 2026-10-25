@@ -1,0 +1,12 @@
+US:
+  tier1: { monthly: "$45", annual: "$450" }
+  tier2: { monthly: "$60", annual: "$600" }
+  tier3: { monthly: "$100", annual: "$1,000" }
+GT:
+  tier1: { monthly: "Q355", annual: "Q3,550" }
+  tier2: { monthly: "Q469", annual: "Q4,690" }
+  tier3: { monthly: "Q780", annual: "Q7,800" }
+HN:
+  tier1: { monthly: "L1,200", annual: "L12,000" }
+  tier2: { monthly: "L1,600", annual: "L16,000" }
+  tier3: { monthly: "L2,675", annual: "L26,750" }

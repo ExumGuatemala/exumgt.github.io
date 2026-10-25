@@ -1,0 +1,14 @@
+<footer class="site-footer">
+  <div class="footer-links">
+    {% if page.page_key == "home" %}
+    {% for product in t.products.items %}
+    {% if product.visible %}
+    <a href="{{ product.href }}">{{ product.name }}</a>
+    {% endif %}
+    {% endfor %}
+    {% else %}
+    <a href="{{ page.home_url }}">Exum</a>
+    {% endif %}
+  </div>
+  <p class="footer-copyright">{{ t.footer.copyright }}</p>
+</footer>

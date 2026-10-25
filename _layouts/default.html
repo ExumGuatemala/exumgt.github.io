@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% if site.google_analytics_id and site.google_analytics_id != "G-XXXXXXXXXX" %}
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics_id }}');
+</script>
+{% endif %}
+
+<!-- SEO Meta Tags -->
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+<!-- Language alternates -->
+<link rel="alternate" hreflang="es" href="{{ site.url }}{{ page.hreflang_es }}">
+<link rel="alternate" hreflang="en" href="{{ site.url }}{{ page.hreflang_en }}">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ page.hreflang_es }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta property="og:image" content="{{ site.url }}{{ page.image }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+<meta property="twitter:title" content="{{ page.title }}">
+<meta property="twitter:description" content="{{ page.description }}">
+<meta property="twitter:image" content="{{ site.url }}{{ page.image }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="{{ site.company.favicon }}">
+<link rel="apple-touch-icon" href="{{ site.company.favicon }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:600,700,800">
+<link rel="stylesheet" href="/styles.css">
+{% if page.page_key == "igroom" %}
+<link rel="stylesheet" href="/igroom.css">
+{% endif %}
+
+{% if page.jsonld == "organization" %}
+{% include jsonld-organization.html %}
+{% elsif page.jsonld == "software" %}
+{% include jsonld-software.html %}
+{% endif %}
+</head>
+<body data-country="GT">
+
+{% assign t = site.data[page.lang][page.page_key] %}
+{% include nav.html %}
+
+{{ content }}
+
+{% include footer.html %}
+
+<script src="/assets/js/main.js" defer></script>
+
+</body>
+</html>

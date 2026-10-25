@@ -1,0 +1,83 @@
+nav:
+  home: Inicio
+  products: Productos
+  why: "Por qué"
+  team: Equipo
+  contact: Contacto
+
+hero:
+  title: "Software simple para negocios reales."
+  subtitle: "Software listo para usar, diseñado para negocios como el tuyo. Descubre el producto ideal para tu negocio y empieza hoy mismo."
+  cta: "Hablemos"
+
+products:
+  title: "Nuestros productos"
+  subtitle: "Cada producto resuelve un problema específico para un tipo de negocio específico."
+  cta: "Conocer más"
+  items:
+    - id: igroom
+      name: iGroom
+      description: "Gestiona clientes, mascotas y citas de tu negocio de grooming con una herramienta simple y fácil de usar."
+      logo: /images/exum/igroom_logo.webp
+      href: /igroom/
+      visible: true
+    - id: iwear
+      name: iWear
+      description: "El ERP para negocios textiles: controla clientes, pedidos, materiales e inventario en un solo lugar."
+      logo: /images/exum/iwear_logo.webp
+      href: /iwear/
+      visible: false
+    - id: icase
+      name: iCase
+      description: "La herramienta para abogados y firmas legales que organiza clientes, documentos y casos. Próximamente."
+      logo: /images/exum/icase_logo.webp
+      href: /icase/
+      visible: false
+
+why:
+  title: "Cómo y por qué lo hacemos"
+  subtitle: "Construimos software distinto: enfocado, simple y con nombre y apellido detrás."
+  items:
+    - id: focus
+      title: "Un problema, un producto"
+      description: "Cada producto de Exum está diseñado para un solo tipo de negocio, así que hace exactamente lo que necesitas, sin funciones de más."
+      icon: "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><circle cx=\"12\" cy=\"12\" r=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"1.4\" fill=\"currentColor\" stroke=\"none\"/></svg>"
+    - id: simple
+      title: "Simple de verdad"
+      description: "Sin curvas de aprendizaje complicadas ni manuales de 100 páginas: si puedes usar tu teléfono, puedes usar Exum."
+      icon: "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12.5l5 5L20 6\"/></svg>"
+    - id: direct
+      title: "Acceso directo"
+      description: "Hablas directamente con quien construye el producto, sin intermediarios."
+      icon: "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L4 20l1.05-4.55A8.47 8.47 0 013.5 11.5 8.5 8.5 0 0112 3a8.5 8.5 0 019 8.5z\"/></svg>"
+
+team:
+  title: "Nuestro equipo"
+  subtitle: "Un equipo pequeño, comprometido con cada detalle."
+  members:
+    - id: kenny
+      name: "Kenny Barrera"
+      role: "Fundador e Ingeniero de Software"
+      initials: KB
+      photo: /images/exum/team_kenny_barrera.webp
+      visible: true
+    - id: jaslin
+      name: "Jaslin Barrera"
+      role: "Diseño"
+      initials: JB
+      photo:
+      visible: false
+    - id: moroni
+      name: "Moroni Ramirez"
+      role: "Ventas"
+      initials: MR
+      photo:
+      visible: false
+
+contact:
+  title: "Hablemos"
+  subtitle: "¿Tienes dudas sobre nuestros productos? Escríbenos y te ayudamos a elegir el correcto para tu negocio."
+  whatsappCta: "Escríbenos por WhatsApp"
+
+footer:
+  copyright: "© 2026 Exum. Todos los derechos reservados."

@@ -1,3 +1,23 @@
+/* Country-specific pricing: all three countries are rendered into the HTML;
+   only the selected one is shown. Default (no JS) is Guatemala, set via
+   body[data-country] in the layout. */
+.price-for-country,
+.caption-for-country {
+  display: none;
+}
+
+body[data-country="US"] .price-for-country.country-US,
+body[data-country="GT"] .price-for-country.country-GT,
+body[data-country="HN"] .price-for-country.country-HN {
+  display: inline;
+}
+
+body[data-country="US"] .caption-for-country.country-US,
+body[data-country="GT"] .caption-for-country.country-GT,
+body[data-country="HN"] .caption-for-country.country-HN {
+  display: block;
+}
+
 /* Product page: nav country switch */
 .country-switch {
   align-self: flex-start;

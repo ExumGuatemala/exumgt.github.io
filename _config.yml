@@ -1,0 +1,32 @@
+title: Exum
+url: "https://www.exumsoftware.com"
+baseurl: ""
+
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+
+exclude:
+  - docs
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
+
+# Keep the old /igroom.html redirect stub (noindex) out of sitemap.xml
+defaults:
+  - scope:
+      path: "igroom.html"
+    values:
+      sitemap: false
+
+# Google Analytics 4 measurement ID. Replace with the real ID once the
+# GA4 property exists (see docs/seo-plan.md, "Manual follow-ups").
+google_analytics_id: "G-XXXXXXXXXX"
+
+company:
+  name: "Exum"
+  whatsapp: "50230514778"
+  email: "exumguatemala@gmail.com"
+  logo: "/images/exum/exum_logo.webp"
+  favicon: "/images/exum/favicon.png"

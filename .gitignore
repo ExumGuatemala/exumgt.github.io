@@ -3,3 +3,9 @@ docs/
 
 # OS junk
 .DS_Store
+
+# Local Jekyll build
+_site/
+.jekyll-cache/
+.bundle/
+vendor/

@@ -1,406 +1,106 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+---
+layout: default
+lang: es
+page_key: home
+title: "Exum - Software simple para negocios reales | iGroom, iWear, iCase"
+description: "Exum crea software simple y enfocado para negocios reales: iGroom para grooming, iWear para textiles e iCase para abogados."
+image: /images/exum/og-image.png
+hreflang_es: /
+hreflang_en: /en/
+lang_switch_url: /en/
+lang_switch_label: EN
+jsonld: organization
+permalink: /
+---
+{% assign t = site.data[page.lang][page.page_key] %}
 
-<!-- SEO Meta Tags -->
-<title>Exum - Software simple para negocios reales | iGroom, iWear, iCase</title>
-<meta name="description" content="Exum crea software simple y enfocado para negocios reales: iGroom para grooming, iWear para textiles e iCase para abogados.">
-<meta name="keywords" content="software SaaS, software para negocios, iGroom, iWear, iCase, software grooming, ERP textil, software para abogados, Guatemala, Centroamérica">
+<header id="inicio" class="hero">
+  <div class="hero-content">
+    <h1>{{ t.hero.title }}</h1>
+    <p>{{ t.hero.subtitle }}</p>
+    <a href="https://wa.me/{{ site.company.whatsapp }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="hero">{{ t.hero.cta }}</a>
+  </div>
+</header>
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://exumsoftware.com/">
-<meta property="og:title" content="Exum - Software simple para negocios reales">
-<meta property="og:description" content="Software simple y enfocado para negocios reales: iGroom, iWear e iCase.">
-<meta property="og:image" content="https://exumsoftware.com/images/exum/og-image.png">
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image">
-<meta property="twitter:url" content="https://exumsoftware.com/">
-<meta property="twitter:title" content="Exum - Software simple para negocios reales">
-<meta property="twitter:description" content="Software simple y enfocado para negocios reales: iGroom, iWear e iCase.">
-<meta property="twitter:image" content="https://exumsoftware.com/images/exum/og-image.png">
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="images/exum/favicon.png">
-<link rel="apple-touch-icon" href="images/exum/favicon.png">
-
-<!-- Canonical URL -->
-<link rel="canonical" href="https://exumsoftware.com/">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:600,700,800">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<div id="app" v-cloak>
-
-  <nav class="navbar">
-    <a href="#inicio" class="navbar-brand">
-      <img src="images/exum/exum_logo.webp" alt="Exum">
-    </a>
-
-    <button
-      class="nav-toggle"
-      :class="{ open: menuOpen }"
-      @click="menuOpen = !menuOpen"
-      :aria-expanded="menuOpen"
-      aria-label="Menu"
-    >
-      <span></span><span></span><span></span>
-    </button>
-
-    <div class="nav-links" :class="{ open: menuOpen }">
-      <a href="#inicio" @click="menuOpen = false">{{ t.nav.home }}</a>
-      <a href="#productos" @click="menuOpen = false">{{ t.nav.products }}</a>
-      <a href="#por-que" @click="menuOpen = false">{{ t.nav.why }}</a>
-      <a href="#equipo" @click="menuOpen = false">{{ t.nav.team }}</a>
-      <a href="#contacto" @click="menuOpen = false">{{ t.nav.contact }}</a>
-      <button class="lang-switch" @click="toggleLang">{{ lang === 'es' ? 'EN' : 'ES' }}</button>
+<section id="productos" class="products">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.products.title }}</h2>
+      <p>{{ t.products.subtitle }}</p>
     </div>
-  </nav>
 
-  <header id="inicio" class="hero">
-    <div class="hero-content">
-      <h1>{{ t.hero.title }}</h1>
-      <p>{{ t.hero.subtitle }}</p>
-      <a :href="'https://wa.me/' + t.contact.whatsapp" class="cta-button" target="_blank" rel="noopener">{{ t.hero.cta }}</a>
-    </div>
-  </header>
-
-  <section id="productos" class="products">
-    <div class="section-inner">
-      <div class="section-heading">
-        <h2>{{ t.products.title }}</h2>
-        <p>{{ t.products.subtitle }}</p>
-      </div>
-
-      <div class="products-grid">
-        <article class="product-card" v-for="product in t.products.items.filter(p => p.visible)" :key="product.id">
-          <div class="product-logo">
-            <img :src="product.logo" :alt="product.name">
-          </div>
-          <p>{{ product.description }}</p>
-          <a :href="product.href" class="product-link">{{ t.products.cta }}</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="por-que" class="why">
-    <div class="section-inner">
-      <div class="section-heading">
-        <h2>{{ t.why.title }}</h2>
-        <p>{{ t.why.subtitle }}</p>
-      </div>
-
-      <div class="why-grid">
-        <div class="why-item" v-for="item in t.why.items" :key="item.id">
-          <div class="why-icon" v-html="item.icon"></div>
-          <h3>{{ item.title }}</h3>
-          <p>{{ item.description }}</p>
+    <div class="products-grid">
+      {% for product in t.products.items %}
+      {% if product.visible %}
+      <article class="product-card">
+        <div class="product-logo">
+          <img src="{{ product.logo }}" alt="{{ product.name }}" width="3300" height="1808" loading="lazy">
         </div>
-      </div>
+        <p>{{ product.description }}</p>
+        <a href="{{ product.href }}" class="product-link">{{ t.products.cta }}</a>
+      </article>
+      {% endif %}
+      {% endfor %}
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="equipo" class="team">
-    <div class="section-inner">
-      <div class="section-heading">
-        <h2>{{ t.team.title }}</h2>
-        <p>{{ t.team.subtitle }}</p>
+<section id="por-que" class="why">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.why.title }}</h2>
+      <p>{{ t.why.subtitle }}</p>
+    </div>
+
+    <div class="why-grid">
+      {% for item in t.why.items %}
+      <div class="why-item">
+        <div class="why-icon">{{ item.icon }}</div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
       </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
-      <div class="team-grid">
-        <div class="team-card" v-for="member in t.team.members.filter(m => m.visible)" :key="member.id">
-          <div class="team-photo">
-            <img v-if="member.photo" :src="member.photo" :alt="member.name">
-            <span v-else class="team-initials">{{ member.initials }}</span>
-          </div>
-          <h3>{{ member.name }}</h3>
-          <p class="team-role">{{ member.role }}</p>
+<section id="equipo" class="team">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.team.title }}</h2>
+      <p>{{ t.team.subtitle }}</p>
+    </div>
+
+    <div class="team-grid">
+      {% for member in t.team.members %}
+      {% if member.visible %}
+      <div class="team-card">
+        <div class="team-photo">
+          {% if member.photo %}
+          <img src="{{ member.photo }}" alt="{{ member.name }}" width="736" height="1121" loading="lazy">
+          {% else %}
+          <span class="team-initials">{{ member.initials }}</span>
+          {% endif %}
         </div>
+        <h3>{{ member.name }}</h3>
+        <p class="team-role">{{ member.role }}</p>
       </div>
+      {% endif %}
+      {% endfor %}
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="contacto" class="contact">
-    <div class="section-inner">
-      <div class="section-heading">
-        <h2>{{ t.contact.title }}</h2>
-        <p>{{ t.contact.subtitle }}</p>
-      </div>
-
-      <div class="contact-actions">
-        <a :href="'https://wa.me/' + t.contact.whatsapp" class="cta-button" target="_blank" rel="noopener">{{ t.contact.whatsappCta }}</a>
-        <a :href="'mailto:' + t.contact.email" class="contact-email">{{ t.contact.email }}</a>
-      </div>
+<section id="contacto" class="contact">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.contact.title }}</h2>
+      <p>{{ t.contact.subtitle }}</p>
     </div>
-  </section>
 
-  <footer class="site-footer">
-    <div class="footer-links">
-      <a v-for="product in t.products.items.filter(p => p.visible)" :key="product.id" :href="product.href">{{ product.name }}</a>
+    <div class="contact-actions">
+      <a href="https://wa.me/{{ site.company.whatsapp }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="contacto">{{ t.contact.whatsappCta }}</a>
+      <a href="mailto:{{ site.company.email }}" class="contact-email" data-evento="clic_email" data-ubicacion="contacto">{{ site.company.email }}</a>
     </div>
-    <p class="footer-copyright">{{ t.footer.copyright }}</p>
-  </footer>
-
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.21/vue.global.prod.min.js"></script>
-<script>
-  const { createApp } = Vue;
-
-  createApp({
-    data() {
-      return {
-        lang: 'es',
-        menuOpen: false,
-        translations: {
-          es: {
-            nav: {
-              home: 'Inicio',
-              products: 'Productos',
-              why: 'Por qué',
-              team: 'Equipo',
-              contact: 'Contacto'
-            },
-            hero: {
-              title: 'Software simple para negocios reales.',
-              subtitle: 'Software listo para usar, diseñado para negocios como el tuyo. Descubre el producto ideal para tu negocio y empieza hoy mismo.',
-              cta: 'Hablemos'
-            },
-            products: {
-              title: 'Nuestros productos',
-              subtitle: 'Cada producto resuelve un problema específico para un tipo de negocio específico.',
-              cta: 'Conocer más',
-              items: [
-                {
-                  id: 'igroom',
-                  name: 'iGroom',
-                  description: 'Gestiona clientes, mascotas y citas de tu negocio de grooming con una herramienta simple y fácil de usar.',
-                  logo: 'images/exum/igroom_logo.webp',
-                  href: 'igroom.html',
-                  visible: true
-                },
-                {
-                  id: 'iwear',
-                  name: 'iWear',
-                  description: 'El ERP para negocios textiles: controla clientes, pedidos, materiales e inventario en un solo lugar.',
-                  logo: 'images/exum/iwear_logo.webp',
-                  href: 'iwear.html',
-                  visible: false
-                },
-                {
-                  id: 'icase',
-                  name: 'iCase',
-                  description: 'La herramienta para abogados y firmas legales que organiza clientes, documentos y casos. Próximamente.',
-                  logo: 'images/exum/icase_logo.webp',
-                  href: 'icase.html',
-                  visible: false
-                }
-              ]
-            },
-            why: {
-              title: 'Cómo y por qué lo hacemos',
-              subtitle: 'Construimos software distinto: enfocado, simple y con nombre y apellido detrás.',
-              items: [
-                {
-                  id: 'focus',
-                  title: 'Un problema, un producto',
-                  description: 'Cada producto de Exum está diseñado para un solo tipo de negocio, así que hace exactamente lo que necesitas, sin funciones de más.',
-                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>'
-                },
-                {
-                  id: 'simple',
-                  title: 'Simple de verdad',
-                  description: 'Sin curvas de aprendizaje complicadas ni manuales de 100 páginas: si puedes usar tu teléfono, puedes usar Exum.',
-                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6"/></svg>'
-                },
-                {
-                  id: 'direct',
-                  title: 'Acceso directo',
-                  description: 'Hablas directamente con quien construye el producto, sin intermediarios.',
-                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L4 20l1.05-4.55A8.47 8.47 0 013.5 11.5 8.5 8.5 0 0112 3a8.5 8.5 0 019 8.5z"/></svg>'
-                }
-              ]
-            },
-            team: {
-              title: 'Nuestro equipo',
-              subtitle: 'Un equipo pequeño, comprometido con cada detalle.',
-              members: [
-                {
-                  id: 'kenny',
-                  name: 'Kenny Barrera',
-                  role: 'Fundador e Ingeniero de Software',
-                  initials: 'KB',
-                  photo: 'images/exum/team_kenny_barrera.webp',
-                  visible: true
-                },
-                {
-                  id: 'jaslin',
-                  name: 'Jaslin Barrera',
-                  role: 'Diseño',
-                  initials: 'JB',
-                  photo: null,
-                  visible: false
-                },
-                {
-                  id: 'moroni',
-                  name: 'Moroni Ramirez',
-                  role: 'Ventas',
-                  initials: 'MR',
-                  photo: null,
-                  visible: false
-                }
-              ]
-            },
-            contact: {
-              title: 'Hablemos',
-              subtitle: '¿Tienes dudas sobre nuestros productos? Escríbenos y te ayudamos a elegir el correcto para tu negocio.',
-              whatsappCta: 'Escríbenos por WhatsApp',
-              whatsapp: '50230514778',
-              email: 'exumguatemala@gmail.com'
-            },
-            footer: {
-              copyright: '© 2026 Exum. Todos los derechos reservados.'
-            }
-          },
-          en: {
-            nav: {
-              home: 'Home',
-              products: 'Products',
-              why: 'Why us',
-              team: 'Team',
-              contact: 'Contact'
-            },
-            hero: {
-              title: 'Simple software for real businesses.',
-              subtitle: "Ready-to-use software, built for businesses like yours. Find the right product for your business and get started today.",
-              cta: "Let's talk"
-            },
-            products: {
-              title: 'Our products',
-              subtitle: 'Each product solves one specific problem for one specific type of business.',
-              cta: 'Learn more',
-              items: [
-                {
-                  id: 'igroom',
-                  name: 'iGroom',
-                  description: 'Manage clients, pets, and appointments for your grooming business with a simple, easy-to-use tool.',
-                  logo: 'images/exum/igroom_logo.webp',
-                  href: 'igroom.html',
-                  visible: true
-                },
-                {
-                  id: 'iwear',
-                  name: 'iWear',
-                  description: 'The ERP for textile businesses: track clients, orders, materials, and inventory in one place.',
-                  logo: 'images/exum/iwear_logo.webp',
-                  href: 'iwear.html',
-                  visible: false
-                },
-                {
-                  id: 'icase',
-                  name: 'iCase',
-                  description: 'The tool for lawyers and firms to organize clients, documents, and cases. Coming soon.',
-                  logo: 'images/exum/icase_logo.webp',
-                  href: 'icase.html',
-                  visible: false
-                }
-              ]
-            },
-            why: {
-              title: 'How and why we build',
-              subtitle: 'We build software differently: focused, simple, and with a real person behind it.',
-              items: [
-                {
-                  id: 'focus',
-                  title: 'One problem, one product',
-                  description: 'Every Exum product is built for one specific type of business, so it does exactly what you need — no bloat.',
-                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>'
-                },
-                {
-                  id: 'simple',
-                  title: 'Actually simple',
-                  description: "No steep learning curves or 100-page manuals: if you can use your phone, you can use Exum.",
-                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6"/></svg>'
-                },
-                {
-                  id: 'direct',
-                  title: 'Direct access',
-                  description: "You talk directly to the person building the product, with no middlemen.",
-                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.35 0-2.62-.32-3.75-.9L4 20l1.05-4.55A8.47 8.47 0 013.5 11.5 8.5 8.5 0 0112 3a8.5 8.5 0 019 8.5z"/></svg>'
-                }
-              ]
-            },
-            team: {
-              title: 'Our team',
-              subtitle: 'A small team, committed to every detail.',
-              members: [
-                {
-                  id: 'kenny',
-                  name: 'Kenny Barrera',
-                  role: 'Founder and Software Engineer',
-                  initials: 'KB',
-                  photo: 'images/exum/team_kenny_barrera.webp',
-                  visible: true
-                },
-                {
-                  id: 'jaslin',
-                  name: 'Jaslin Barrera',
-                  role: 'Design',
-                  initials: 'JB',
-                  photo: null,
-                  visible: false
-                },
-                {
-                  id: 'moroni',
-                  name: 'Moroni Ramirez',
-                  role: 'Sales',
-                  initials: 'MR',
-                  photo: null,
-                  visible: false
-                }
-              ]
-            },
-            contact: {
-              title: "Let's talk",
-              subtitle: "Got questions about our products? Message us and we'll help you find the right one for your business.",
-              whatsappCta: 'Message us on WhatsApp',
-              whatsapp: '50230514778',
-              email: 'exumguatemala@gmail.com'
-            },
-            footer: {
-              copyright: '© 2026 Exum. All rights reserved.'
-            }
-          }
-        }
-      };
-    },
-    computed: {
-      t() {
-        return this.translations[this.lang];
-      }
-    },
-    methods: {
-      toggleLang() {
-        this.lang = this.lang === 'es' ? 'en' : 'es';
-      }
-    },
-    watch: {
-      lang: {
-        immediate: true,
-        handler(value) {
-          document.documentElement.lang = value;
-        }
-      }
-    }
-  }).mount('#app');
-</script>
-
-</body>
-</html>
+  </div>
+</section>

@@ -1,0 +1,141 @@
+---
+layout: default
+lang: en
+page_key: igroom
+title: "iGroom - Grooming business management software | Exum"
+description: "iGroom is the simple software for grooming businesses: manage clients, pets, and appointments in one place. An Exum product."
+image: /images/igroom/igroom_month_calendar.webp
+hreflang_es: /igroom/
+hreflang_en: /en/igroom/
+lang_switch_url: /igroom/
+lang_switch_label: ES
+home_url: /en/
+jsonld: software
+permalink: /en/igroom/
+---
+{% assign t = site.data[page.lang][page.page_key] %}
+{% assign pricing = site.data["igroom-pricing"] %}
+{% assign country_codes = "US,GT,HN" | split: "," %}
+{% assign whatsapp_href = "https://wa.me/" | append: site.company.whatsapp | append: "?text=" | append: t.hero.whatsappMessage | uri_escape %}
+
+<header id="inicio" class="product-hero">
+  <div class="product-hero-content">
+    <img class="product-hero-logo" src="/images/exum/igroom_logo.webp" alt="iGroom" width="3300" height="1808" fetchpriority="high">
+    <h1>{{ t.hero.title }}</h1>
+    <p>{{ t.hero.subtitle }}</p>
+    <a href="{{ whatsapp_href }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="hero">{{ t.hero.cta }}</a>
+  </div>
+</header>
+
+<section id="funciones" class="features">
+  {% for feature in t.features %}
+  <div class="feature-row{% cycle 'feature-side': '', ' reverse' %}">
+    <div class="feature-text">
+      <h3>{{ feature.title }}</h3>
+      <p>{{ feature.description }}</p>
+    </div>
+    <div class="feature-image">
+      <img src="{{ feature.image }}" alt="{{ feature.title }}" width="{{ feature.width }}" height="{{ feature.height }}" loading="lazy">
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<section id="precios" class="pricing">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.pricing.title }}</h2>
+      <p>{{ t.pricing.subtitle }}</p>
+    </div>
+
+    <div class="pricing-cards">
+      {% for tier in t.pricing.tiers %}
+      <div class="tier-card">
+        <div class="tier-name">{{ tier.name }}</div>
+        <div class="tier-price">
+          {% for code in country_codes %}<span class="price-for-country country-{{ code }}">{{ pricing[code][tier.id].monthly }}</span>{% endfor %}
+        </div>
+        <div class="tier-price-period">{{ t.pricing.perMonth }}</div>
+        <div class="tier-price-annual">
+          {% for code in country_codes %}<span class="price-for-country country-{{ code }}">{{ pricing[code][tier.id].annual }}</span>{% endfor %} {{ t.pricing.perYear }}
+        </div>
+        <div class="tier-users">{{ t.pricing.usersUpToPrefix }}{{ tier.users }}{{ t.pricing.usersUpToSuffix }}</div>
+        <ul class="tier-features">
+          {% for group in t.pricing.featureGroups %}
+          {% for row in group.rows %}
+          {% if row.tiers contains tier.id %}
+          <li>
+            {{ row.feature }}
+            {% unless row.built %}<span class="coming-soon-badge" title="{{ t.pricing.comingSoonNote }}">🕒</span>{% endunless %}
+          </li>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="pricing-table-wrap">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th class="feature-col">{{ t.pricing.featureColumnLabel }}</th>
+            {% for tier in t.pricing.tiers %}
+            <th class="plan-col">
+              <div class="plan-name">{{ tier.name }}</div>
+              <div class="plan-price">
+                {% for code in country_codes %}<span class="price-for-country country-{{ code }}">{{ pricing[code][tier.id].monthly }}</span>{% endfor %}
+              </div>
+              <div class="plan-price-period">{{ t.pricing.perMonth }}</div>
+              <div class="plan-price-annual">
+                {% for code in country_codes %}<span class="price-for-country country-{{ code }}">{{ pricing[code][tier.id].annual }}</span>{% endfor %} {{ t.pricing.perYear }}
+              </div>
+              <div class="plan-users">{{ t.pricing.usersUpToPrefix }}{{ tier.users }}{{ t.pricing.usersUpToSuffix }}</div>
+            </th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for group in t.pricing.featureGroups %}
+          <tr class="group-row">
+            <td colspan="{{ t.pricing.tiers.size | plus: 1 }}">{{ group.label }}</td>
+          </tr>
+          {% for row in group.rows %}
+          <tr>
+            <td class="feature-name-cell">
+              {{ row.feature }}
+              {% unless row.built %}<span class="coming-soon-badge" title="{{ t.pricing.comingSoonNote }}">🕒</span>{% endunless %}
+            </td>
+            {% for tier in t.pricing.tiers %}
+            <td class="feature-cell">
+              {% if row.tiers contains tier.id %}<span class="feature-check">✓</span>{% else %}<span class="feature-dash">–</span>{% endif %}
+            </td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <p class="pricing-caption">🕒 {{ t.pricing.comingSoonNote }}</p>
+    {% for code in country_codes %}
+    <p class="pricing-caption caption-for-country country-{{ code }}">{{ t.pricing.currencyNoteByCountry[code] }}</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.contact.title }}</h2>
+      <p>{{ t.contact.subtitle }}</p>
+    </div>
+
+    <div class="contact-actions">
+      <a href="{{ whatsapp_href }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="contacto">{{ t.contact.whatsappCta }}</a>
+      <a href="mailto:{{ site.company.email }}" class="contact-email" data-evento="clic_email" data-ubicacion="contacto">{{ site.company.email }}</a>
+    </div>
+  </div>
+</section>

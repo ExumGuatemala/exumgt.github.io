@@ -8,8 +8,6 @@
 
 * { box-sizing: border-box; }
 
-[v-cloak] { display: none; }
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
