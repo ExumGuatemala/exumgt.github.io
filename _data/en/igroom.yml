@@ -67,18 +67,17 @@ pricing:
         - { feature: "Manage clients, pets, and appointments", tiers: [tier1, tier2, tier3], built: true }
         - { feature: "Calendar by month, week, and day", tiers: [tier1, tier2, tier3], built: true }
         - { feature: "Manage payments and balances", tiers: [tier1, tier2, tier3], built: true }
-        - { feature: "Last-appointment report (no filters)", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Last-appointment report with all filters", tiers: [tier1, tier2, tier3], built: true }
         - { feature: "Manage services/products per appointment, per pet", tiers: [tier1, tier2, tier3], built: true }
     - label: "Also with iGroom Advance"
       rows:
+        - { feature: "Multiple branches (appointments and inventory per branch)", tiers: [tier2, tier3], built: true }
         - { feature: "Employee shift scheduling", tiers: [tier2, tier3], built: false }
         - { feature: "Basic inventory per appointment", tiers: [tier2, tier3], built: false }
-        - { feature: "Team activity log", tiers: [tier2, tier3], built: false }
+        - { feature: "Team activity log", tiers: [tier2, tier3], built: true }
         - { feature: "Dashboard with reports (capped history)", tiers: [tier2, tier3], built: false }
-        - { feature: "Last-appointment report with day filters", tiers: [tier2, tier3], built: false }
         - { feature: "Export all reports to Excel", tiers: [tier2, tier3], built: false }
-        - { feature: "Multiple branches (appointments and inventory per branch)", tiers: [tier2, tier3], built: false }
-        - { feature: "Automatic WhatsApp reminders", tiers: [tier2, tier3], built: false }
+        - { feature: "Automatic email reminders", tiers: [tier2, tier3], built: false }
     - label: "Also with iGroom Enterprise"
       rows:
         - { feature: "Full dashboard, no history or filter limits, with cross-branch comparison", tiers: [tier3], built: false }
@@ -88,6 +87,7 @@ pricing:
         - { feature: "Client self-booking, choosing which branch", tiers: [tier3], built: false }
         - { feature: "Full inventory with automatic deduction", tiers: [tier3], built: false }
         - { feature: "Full, exportable audit trail", tiers: [tier3], built: false }
+        - { feature: "Automatic WhatsApp reminders", tiers: [tier3], built: false }
 
 contact:
   title: "Get started with iGroom"

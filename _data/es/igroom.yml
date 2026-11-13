@@ -67,18 +67,17 @@ pricing:
         - { feature: "Gestión de clientes, mascotas y citas", tiers: [tier1, tier2, tier3], built: true }
         - { feature: "Calendario por mes, semana y día", tiers: [tier1, tier2, tier3], built: true }
         - { feature: "Gestión de pagos y saldos", tiers: [tier1, tier2, tier3], built: true }
-        - { feature: "Reporte de última cita (sin filtros)", tiers: [tier1, tier2, tier3], built: true }
+        - { feature: "Reporte de última cita con todos los filtros", tiers: [tier1, tier2, tier3], built: true }
         - { feature: "Gestión de servicios y productos por cita, por mascota", tiers: [tier1, tier2, tier3], built: true }
     - label: "Además, con iGroom Advance"
       rows:
+        - { feature: "Múltiples sucursales (citas e inventario por sucursal)", tiers: [tier2, tier3], built: true }
         - { feature: "Horarios y turnos de empleados", tiers: [tier2, tier3], built: false }
         - { feature: "Inventario básico por cita", tiers: [tier2, tier3], built: false }
-        - { feature: "Registro de actividad del equipo", tiers: [tier2, tier3], built: false }
+        - { feature: "Registro de actividad del equipo", tiers: [tier2, tier3], built: true }
         - { feature: "Dashboard con reportes (historial limitado)", tiers: [tier2, tier3], built: false }
-        - { feature: "Reporte de última cita con filtros por día", tiers: [tier2, tier3], built: false }
         - { feature: "Exportar todos los reportes a Excel", tiers: [tier2, tier3], built: false }
-        - { feature: "Múltiples sucursales (citas e inventario por sucursal)", tiers: [tier2, tier3], built: false }
-        - { feature: "Recordatorios automáticos por WhatsApp", tiers: [tier2, tier3], built: false }
+        - { feature: "Recordatorios automáticos por correo electrónico", tiers: [tier2, tier3], built: false }
     - label: "Además, con iGroom Enterprise"
       rows:
         - { feature: "Dashboard completo, sin límites de historial ni filtros, con comparación entre sucursales", tiers: [tier3], built: false }
@@ -88,6 +87,7 @@ pricing:
         - { feature: "Auto-agendamiento de citas para tus clientes, eligiendo sucursal", tiers: [tier3], built: false }
         - { feature: "Inventario completo con descuento automático", tiers: [tier3], built: false }
         - { feature: "Auditoría completa y exportable", tiers: [tier3], built: false }
+        - { feature: "Recordatorios automáticos por WhatsApp", tiers: [tier3], built: false }
 
 contact:
   title: "Empieza con iGroom"
