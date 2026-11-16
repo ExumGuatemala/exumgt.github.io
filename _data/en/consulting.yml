@@ -1,0 +1,113 @@
+nav:
+  home: Home
+  included: "What's included"
+  process: "How it works"
+  faq: FAQ
+  contact: Contact
+
+hero:
+  tag: Consulting
+  title: "Know where to start."
+  subtitle: "Real technology experience, powered by artificial intelligence. We get to know your business and build a clear plan together: what you need, in what order, and with which tools. You decide how and when to follow it."
+  cta: "I want to know where to start"
+  whatsappMessage: "Hi, I'd like a technology consultation for my business."
+
+approach:
+  title: "Experience + AI: the best of both"
+  subtitle: "Artificial intelligence is powerful, but only if you know what to ask. That's why we combine the two."
+  items:
+    - title: "A person alone"
+      verdict: "Slower and incomplete"
+      description: "One person alone takes longer to understand your business, and it's easy to miss something."
+    - title: "AI alone"
+      verdict: "Can mislead you"
+      description: "If you don't know what to ask, AI gives you answers that sound right but don't fit your business."
+    - title: "Someone inexperienced + AI"
+      verdict: "Trial and error"
+      description: "Lots of back and forth, attempts, and mistakes before landing on something that works. And you pay for that time."
+    - title: "Experience + AI"
+      verdict: "Fast and on target"
+      description: "Experience building software to ask the right questions, and AI to understand your business and build your plan faster and more thoroughly."
+      highlight: true
+
+included:
+  title: "What's included"
+  subtitle: "Clear answers to the questions every business owner has about technology."
+  technicalLabel: "For example:"
+  items:
+    - title: "Where you are today"
+      description: "We look at how your business works today: what's on paper, what's in Excel, what's on WhatsApp, and where time or money is lost."
+      technical: "processes, current tools, and bottlenecks."
+    - title: "What to digitize first"
+      description: "You don't have to digitize everything at once. We help you pick the change that gets the most results for the least effort."
+      technical: "sales, inventory, appointments, invoicing, or payments."
+    - title: "Which software fits you"
+      description: "There are thousands of options. We help you choose the ones that fit your business and budget, decide whether to buy something ready-made or build it, and review quotes you've already received."
+      technical: "ERP, CRM, point of sale, accounting, or comparing vendors."
+    - title: "AI in your business"
+      description: "We show you how to use artificial intelligence in your day-to-day: what it's good for, what to ask it, and what not to trust it with."
+      technical: "writing, analyzing data, customer service, and automating tasks."
+    - title: "Your tech team"
+      description: "We help you figure out who you need: hire someone, work with an outside company, or simply train your current team."
+      technical: "roles, hiring, and outsourcing."
+    - title: "Your data, protected"
+      description: "We check that your business information is backed up and that important accounts are in your name, not an employee's or a vendor's."
+      technical: "backups, passwords, domains, and access."
+    - title: "A written plan"
+      description: "You walk away with a document listing the steps in order and their priorities, so you can follow it even when we're not there."
+      technical: "a roadmap with priorities and rough timelines."
+    - title: "Recommended tools"
+      description: "For each need we suggest specific tools, with their approximate cost, so you don't have to search from scratch."
+      technical: "names, what each one is for, and what it costs."
+
+process:
+  title: "How it works"
+  subtitle: "Four steps. No contracts: you only pay for the hours you use."
+  steps:
+    - title: "Free call"
+      description: "A short WhatsApp call to understand your business and see if we can help."
+    - title: "Hourly sessions"
+      description: "We meet by video call or in person, and use AI to understand your business faster and more deeply."
+    - title: "Your written plan"
+      description: "We build the plan with experience and AI: the steps in order and the recommended tools."
+    - title: "You decide"
+      description: "You follow the plan at your own pace, with your team or whoever you choose."
+
+followup:
+  title: "After: follow-up sessions"
+  subtitle: "Optional. Book more hours whenever you need them, with no contracts or monthly fees."
+  items:
+    - title: "Review progress"
+      description: "We go over what you've done from the plan and what's left."
+    - title: "Adjust the plan"
+      description: "If your business changed or something didn't work as expected, we update the plan."
+    - title: "New questions"
+      description: "Got offered a new system or facing a big decision? Let's talk it through before you spend."
+
+faq:
+  title: "Frequently asked questions"
+  items:
+    - question: "Who is this consulting for?"
+      answer: "For owners, managers, and executives who know they need technology but don't know where to start, what they need, or which path to take."
+    - question: "Do I need to know about technology?"
+      answer: "No. We talk in plain language, no jargon. You know your business; we help with the technology side."
+    - question: "Why not just ask AI myself?"
+      answer: "You can, but AI answers what you ask, not what you need to know. Without experience it's hard to know what to ask, or to spot an answer that sounds right but is wrong. We bring the experience and use AI to reach the right plan faster."
+    - question: "Will you teach me to use AI?"
+      answer: "Yes. Part of the plan is recommending how to use artificial intelligence in your business, with concrete examples for your day-to-day."
+    - question: "Are sessions in person or online?"
+      answer: "Both. We hold video sessions with businesses across Central America and the Caribbean, and meet in person when we're nearby."
+    - question: "How many hours will I need?"
+      answer: "It depends on the size of your business and how many topics you want to cover. We'll give you an idea on the free call before we start."
+    - question: "Do I have to hire Exum to carry out the plan?"
+      answer: "No. The plan is yours: follow it with your team, another provider, or us. It's your call."
+    - question: "How much does it cost?"
+      answer: "We charge by the hour, and the first call is free. Message us on WhatsApp and we'll share our rate, no strings attached."
+
+contact:
+  title: "Not sure where to start?"
+  subtitle: "Message us and we'll set up a short, free call to get to know your business."
+  whatsappCta: "Message us on WhatsApp"
+
+footer:
+  copyright: "© 2026 Exum. All rights reserved."

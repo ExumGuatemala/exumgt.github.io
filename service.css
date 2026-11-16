@@ -47,6 +47,29 @@
   color: var(--color-gray);
 }
 
+/* Comparison cards (e.g. experience + AI on /servicios/consultoria/) */
+.svc-verdict {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--color-gray-soft);
+}
+
+.svc-card-highlight {
+  border: 2px solid var(--color-yellow);
+  box-shadow: 0 12px 32px rgba(237, 208, 17, 0.25);
+}
+
+.svc-card-highlight .svc-verdict {
+  background: var(--color-yellow);
+  color: var(--color-gray);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
 @media (min-width: 600px) {
   .svc-grid { grid-template-columns: repeat(2, 1fr); }
   .svc-grid-3 { grid-template-columns: 1fr; }

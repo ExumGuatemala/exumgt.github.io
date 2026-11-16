@@ -46,6 +46,12 @@ services:
       description: "Construimos tu sitio web para que Google lo entienda y lo muestre a las personas que buscan lo que ofreces."
       href: /servicios/seo/
       visible: true
+    - id: consulting
+      tag: Consultoría
+      title: "Saber por dónde empezar"
+      description: "Experiencia en tecnología + IA para armar contigo un plan claro: qué necesitas, en qué orden y con qué herramientas."
+      href: /servicios/consultoria/
+      visible: true
 
 why:
   title: "Cómo y por qué lo hacemos"

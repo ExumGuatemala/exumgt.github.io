@@ -1,0 +1,113 @@
+nav:
+  home: Inicio
+  included: "Qué incluye"
+  process: "Cómo funciona"
+  faq: Preguntas
+  contact: Contacto
+
+hero:
+  tag: Consultoría
+  title: "Saber por dónde empezar."
+  subtitle: "Experiencia real en tecnología, potenciada con inteligencia artificial. Entendemos tu negocio y armamos juntos un plan claro: qué necesitas, en qué orden y con qué herramientas. Tú decides cómo y cuándo seguirlo."
+  cta: "Quiero saber por dónde empezar"
+  whatsappMessage: "Hola, quiero una consultoría para la tecnología de mi negocio."
+
+approach:
+  title: "Experiencia + IA: lo mejor de los dos"
+  subtitle: "La inteligencia artificial es poderosa, pero solo si sabes qué preguntarle. Por eso combinamos las dos."
+  items:
+    - title: "Solo una persona"
+      verdict: "Más lento e incompleto"
+      description: "Una persona sola tarda más en entender tu negocio y es fácil que algo se le pase por alto."
+    - title: "Solo IA"
+      verdict: "Puede engañarte"
+      description: "Si no sabes qué preguntar, la IA te da respuestas que suenan bien pero no se ajustan a tu negocio."
+    - title: "Alguien sin experiencia + IA"
+      verdict: "Prueba y error"
+      description: "Muchas vueltas, intentos y errores hasta dar con algo que funcione. Y ese tiempo lo pagas tú."
+    - title: "Experiencia + IA"
+      verdict: "Rápido y acertado"
+      description: "Experiencia construyendo software para hacer las preguntas correctas, y la IA para entender tu negocio y armar tu plan más rápido y más a fondo."
+      highlight: true
+
+included:
+  title: "Qué incluye"
+  subtitle: "Respuestas claras a las preguntas que todo dueño de negocio se hace sobre tecnología."
+  technicalLabel: "Por ejemplo:"
+  items:
+    - title: "Dónde estás hoy"
+      description: "Revisamos cómo trabaja tu negocio hoy: qué haces en papel, qué en Excel y qué por WhatsApp, y dónde se pierde tiempo o dinero."
+      technical: "procesos, herramientas actuales y cuellos de botella."
+    - title: "Qué digitalizar primero"
+      description: "No todo se tiene que digitalizar al mismo tiempo. Te ayudamos a decidir qué cambio te da más resultado con menos esfuerzo."
+      technical: "ventas, inventario, citas, facturación o cobros."
+    - title: "Qué software te conviene"
+      description: "Hay miles de opciones. Te ayudamos a elegir las que se ajustan a tu negocio y a tu presupuesto, decidir si conviene comprar algo hecho o construirlo, y revisar las cotizaciones que ya te hicieron."
+      technical: "ERP, CRM, punto de venta, contabilidad o comparar proveedores."
+    - title: "IA en tu negocio"
+      description: "Te enseñamos a usar la inteligencia artificial en el día a día de tu negocio: para qué sirve, qué preguntarle y en qué no confiar."
+      technical: "redactar, analizar datos, atender clientes y automatizar tareas."
+    - title: "Tu equipo de tecnología"
+      description: "Te orientamos sobre a quién necesitas: contratar a alguien, contratar una empresa externa o simplemente capacitar a tu equipo actual."
+      technical: "perfiles, contratación y tercerización."
+    - title: "Tus datos protegidos"
+      description: "Revisamos que la información de tu negocio esté respaldada y que las cuentas importantes estén a tu nombre, no al de un empleado o un proveedor."
+      technical: "respaldos, contraseñas, dominios y accesos."
+    - title: "Un plan por escrito"
+      description: "Al final te llevas un documento con los pasos en orden y sus prioridades, para que lo puedas seguir aunque no estemos ahí."
+      technical: "hoja de ruta con prioridades y tiempos aproximados."
+    - title: "Herramientas recomendadas"
+      description: "Para cada necesidad te sugerimos herramientas concretas, con su costo aproximado, para que no tengas que buscar desde cero."
+      technical: "nombres, para qué sirve cada una y cuánto cuestan."
+
+process:
+  title: "Cómo funciona"
+  subtitle: "Cuatro pasos. Sin contratos: pagas solo las horas que usas."
+  steps:
+    - title: "Llamada gratis"
+      description: "Una llamada corta por WhatsApp para entender tu negocio y ver si te podemos ayudar."
+    - title: "Sesiones por hora"
+      description: "Nos reunimos por videollamada o en persona, y usamos IA para entender tu negocio más rápido y a fondo."
+    - title: "Tu plan por escrito"
+      description: "Armamos el plan con experiencia y con IA: los pasos en orden y las herramientas recomendadas."
+    - title: "Tú decides"
+      description: "Sigues el plan a tu ritmo, con tu equipo o con quien tú elijas."
+
+followup:
+  title: "Después: sesiones de seguimiento"
+  subtitle: "Opcional. Agenda más horas cuando las necesites, sin contratos ni mensualidades."
+  items:
+    - title: "Revisar avances"
+      description: "Vemos juntos qué has logrado del plan y qué falta."
+    - title: "Ajustar el plan"
+      description: "Si tu negocio cambió o algo no funcionó como esperabas, actualizamos el plan."
+    - title: "Resolver dudas nuevas"
+      description: "¿Te ofrecieron un sistema nuevo o tienes que tomar una decisión? Lo hablamos antes de que gastes."
+
+faq:
+  title: "Preguntas frecuentes"
+  items:
+    - question: "¿Para quién es esta consultoría?"
+      answer: "Para dueños, gerentes y directores de negocios que saben que necesitan tecnología pero no saben por dónde empezar, qué necesitan o qué camino seguir."
+    - question: "¿Necesito saber de tecnología?"
+      answer: "No. Hablamos en palabras simples, sin términos técnicos. Tú conoces tu negocio; nosotros te ayudamos con la parte tecnológica."
+    - question: "¿Por qué no le pregunto directamente a la IA?"
+      answer: "Puedes, pero la IA responde lo que le preguntas, no lo que necesitas saber. Sin experiencia es difícil saber qué preguntar y detectar cuando una respuesta suena bien pero está equivocada. Nosotros ponemos la experiencia y usamos la IA para llegar más rápido a un plan correcto."
+    - question: "¿Me enseñan a usar IA?"
+      answer: "Sí. Parte del plan es recomendarte cómo usar la inteligencia artificial en tu negocio, con ejemplos concretos para tu día a día."
+    - question: "¿Las sesiones son en persona o en línea?"
+      answer: "Las dos. Hacemos sesiones por videollamada con negocios de toda Centroamérica y el Caribe, y en persona cuando estamos cerca."
+    - question: "¿Cuántas horas voy a necesitar?"
+      answer: "Depende del tamaño de tu negocio y de cuántos temas quieras cubrir. En la llamada gratis te damos una idea antes de empezar."
+    - question: "¿Tengo que contratar a Exum para hacer lo que dice el plan?"
+      answer: "No. El plan es tuyo: lo puedes seguir con tu equipo, con otro proveedor o con nosotros. Tú decides."
+    - question: "¿Cuánto cuesta?"
+      answer: "Cobramos por hora y la primera llamada es gratis. Escríbenos por WhatsApp y te damos la tarifa sin compromiso."
+
+contact:
+  title: "¿No sabes por dónde empezar?"
+  subtitle: "Escríbenos y agendamos una llamada corta y gratis para conocer tu negocio."
+  whatsappCta: "Escríbenos por WhatsApp"
+
+footer:
+  copyright: "© 2026 Exum. Todos los derechos reservados."

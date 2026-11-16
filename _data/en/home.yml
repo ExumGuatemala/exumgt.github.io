@@ -46,6 +46,12 @@ services:
       description: "We build your website so Google understands it and shows it to people searching for what you offer."
       href: /en/services/seo/
       visible: true
+    - id: consulting
+      tag: Consulting
+      title: "Know where to start"
+      description: "Technology experience + AI to build a clear plan with you: what you need, in what order, and with which tools."
+      href: /en/services/consulting/
+      visible: true
 
 why:
   title: "How and why we build"
