@@ -34,6 +34,10 @@
     <a href="#que-incluye">{{ t.nav.included }}</a>
     <a href="#como-funciona">{{ t.nav.process }}</a>
     <a href="#preguntas">{{ t.nav.faq }}</a>
+    {% elsif page.page_key == "team" %}
+    {% for section in t.members[page.member].sections %}
+    <a href="#{{ section.id }}">{{ section.nav }}</a>
+    {% endfor %}
     {% endif %}
     <a href="#contacto">{{ t.nav.contact }}</a>
 

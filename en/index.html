@@ -106,6 +106,9 @@ permalink: /en/
         </div>
         <h3>{{ member.name }}</h3>
         <p class="team-role">{{ member.role }}</p>
+        {% if member.profile %}
+        <a href="{{ member.profile }}" class="product-link team-link">{{ t.team.cta }}</a>
+        {% endif %}
       </div>
       {% endif %}
       {% endfor %}

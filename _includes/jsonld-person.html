@@ -1,0 +1,24 @@
+{% assign t = site.data[page.lang][page.page_key] %}
+{% assign m = t.members[page.member] %}
+{% assign person = site.data[page.lang].home.team.members | where: "id", page.member | first %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "url": "{{ site.url }}{{ page.url }}",
+  "inLanguage": "{{ page.lang }}",
+  "mainEntity": {
+    "@type": "Person",
+    "name": {{ person.name | jsonify }},
+    "jobTitle": {{ person.role | jsonify }},
+    "description": {{ page.description | jsonify }},
+    {% if person.photo %}"image": "{{ site.url }}{{ person.photo }}",{% endif %}
+    "worksFor": {
+      "@type": "Organization",
+      "@id": "{{ site.url }}/#organization",
+      "name": "{{ site.company.name }}",
+      "url": "{{ site.url }}/"
+    }
+  }
+}
+</script>

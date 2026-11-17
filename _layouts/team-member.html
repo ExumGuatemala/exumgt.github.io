@@ -1,0 +1,69 @@
+---
+layout: default
+---
+{% assign t = site.data[page.lang][page.page_key] %}
+{% assign m = t.members[page.member] %}
+{% assign person = site.data[page.lang].home.team.members | where: "id", page.member | first %}
+{% assign whatsapp_href = "https://wa.me/" | append: site.company.whatsapp | append: "?text=" | append: m.hero.whatsappMessage | uri_escape %}
+
+<header id="inicio" class="profile-hero">
+  <div class="profile-hero-content">
+    <div class="team-photo profile-photo">
+      {% if person.photo %}
+      <img src="{{ person.photo }}" alt="{{ person.name }}" width="736" height="1121" fetchpriority="high">
+      {% else %}
+      <span class="team-initials">{{ person.initials }}</span>
+      {% endif %}
+    </div>
+    <h1>{{ person.name }}</h1>
+    <p class="profile-role">{{ person.role }}</p>
+    <p>{{ m.hero.subtitle }}</p>
+    <a href="{{ whatsapp_href }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="hero_perfil">{{ t.contact.whatsappCta }}</a>
+  </div>
+</header>
+
+{% for section in m.sections %}
+{% assign alt = forloop.index0 | modulo: 2 %}
+<section id="{{ section.id }}" class="svc-section{% if alt == 0 %} svc-section-alt{% endif %}" aria-labelledby="{{ section.id }}-title">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2 id="{{ section.id }}-title">{{ section.title }}</h2>
+      {% if section.subtitle %}<p>{{ section.subtitle }}</p>{% endif %}
+    </div>
+
+    {% if section.paragraphs %}
+    <div class="profile-text">
+      {% for paragraph in section.paragraphs %}
+      <p>{{ paragraph }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if section.items %}
+    <div class="svc-grid{% if section.columns == 3 %} svc-grid-3{% endif %}">
+      {% for item in section.items %}
+      <article class="svc-card">
+        {% if item.label %}<span class="svc-verdict">{{ item.label }}</span>{% endif %}
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endfor %}
+
+<section id="contacto" class="contact">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ m.contact.title }}</h2>
+      <p>{{ m.contact.subtitle }}</p>
+    </div>
+
+    <div class="contact-actions">
+      <a href="{{ whatsapp_href }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="contacto_perfil">{{ t.contact.whatsappCta }}</a>
+      <a href="mailto:{{ site.company.email }}" class="contact-email" data-evento="clic_email" data-ubicacion="contacto_perfil">{{ site.company.email }}</a>
+    </div>
+  </div>
+</section>

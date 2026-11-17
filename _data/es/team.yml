@@ -1,0 +1,67 @@
+nav:
+  home: Inicio
+  contact: Contacto
+
+contact:
+  whatsappCta: "Escríbenos por WhatsApp"
+
+footer:
+  copyright: "© 2026 Exum. Todos los derechos reservados."
+
+# One entry per team member, keyed by the member id in home.yml (name, role
+# and photo come from there). Each section shows either `paragraphs` (text)
+# or `items` (cards); `columns: 3` uses a 3-column card grid instead of 4.
+members:
+  kenny:
+    hero:
+      subtitle: "Lleva 10 años construyendo apps que ayudan a las empresas a dejar atrás el Excel y el trabajo manual."
+      whatsappMessage: "Hola, quiero hablar con Kenny sobre la tecnología de mi negocio."
+    sections:
+      - id: quien-es
+        nav: "Quién es"
+        title: "Quién es Kenny"
+        paragraphs:
+          - "Kenny Barrera es ingeniero de software, guatemalteco y fundador de Exum. Desde 2016 construye apps para empresas, la mayoría en Estados Unidos: herramientas internas que reemplazan hojas de Excel y trabajo manual para que un equipo trabaje mejor."
+          - "Hoy pone esa experiencia al servicio de los negocios de Guatemala y Centroamérica."
+      - id: que-hace
+        nav: "Qué hace"
+        title: "Qué hace en Exum"
+        items:
+          - title: "Productos"
+            description: "Diseña y construye los productos de Exum, como iGroom, desde la primera idea hasta que llegan a manos del cliente."
+          - title: "Consultoría"
+            description: "Se reúne con dueños de negocios para entender cómo trabajan y armar con ellos un plan tecnológico claro, con experiencia y con IA."
+          - title: "Sitios que aparecen en Google"
+            description: "Construye sitios web pensados para que Google los entienda y los muestre a quien busca lo que ofrece cada negocio."
+          - title: "Apps a medida"
+            description: "Cuando un negocio necesita algo que no existe, construye la app que lo resuelve."
+      - id: experiencia
+        nav: "Experiencia"
+        title: "Qué ha hecho"
+        paragraphs:
+          - "En 10 años, Kenny ha construido apps para empresas muy distintas: una firma de inversión y agencias de tecnología en Estados Unidos, una empresa de bienes raíces y una tienda de muebles en Los Ángeles, entre otras. También dirigió proyectos a la medida para 10 a 12 clientes al mismo tiempo. Casi siempre el trabajo fue el mismo: entender cómo trabaja un negocio y construir la herramienta que le ahorra tiempo. Su primera app, en Totonicapán, convirtió una búsqueda de más de 10 horas en Excel en unos minutos."
+      - id: por-que-exum
+        nav: "Por qué Exum"
+        title: "Por qué fundó Exum"
+        items:
+          - title: "El problema del Excel"
+            description: "Muchos negocios de Guatemala siguen trabajando con papel, Excel y WhatsApp, y pierden tiempo y dinero en cosas que una herramienta simple podría resolver."
+          - title: "Simple, no complicado"
+            description: "El software genérico es complicado, caro y está hecho para todos. Kenny prefiere herramientas simples, cada una para un problema y un tipo de negocio."
+          - title: "La misma calidad, aquí"
+            description: "Los negocios de Guatemala y Centroamérica merecen la misma calidad que las empresas de Estados Unidos para las que ha trabajado, a un precio que tenga sentido."
+      - id: mas-sobre
+        nav: "Más sobre Kenny"
+        title: "Más sobre Kenny"
+        items:
+          - title: "Familia"
+            description: "Está casado con una abogada increíble y tienen 3 hijos."
+          - title: "Lo que le gusta"
+            description: "Le encanta cocinar, salir a correr y ayudar a otros."
+          - title: "Estudios"
+            description: "Licenciatura en Ciencias de la Computación, Universidad Mesoamericana."
+          - title: "Idiomas"
+            description: "Español (nativo), inglés (profesional) y alemán (básico)."
+    contact:
+      title: "¿Quieres hablar con Kenny?"
+      subtitle: "Escríbenos por WhatsApp y cuéntanos de tu negocio."

@@ -434,6 +434,10 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.9rem;
 }
 
+.team-link {
+  margin-top: 16px;
+}
+
 @media (min-width: 768px) {
   .team-grid {
     flex-direction: row;

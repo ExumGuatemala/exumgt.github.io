@@ -79,12 +79,14 @@ why:
 team:
   title: "Our team"
   subtitle: "A small team, committed to every detail."
+  cta: "View profile"
   members:
     - id: kenny
       name: "Kenny Barrera"
       role: "Founder and Software Engineer"
       initials: KB
       photo: /images/exum/team_kenny_barrera.webp
+      profile: /en/team/kenny-barrera/
       visible: true
     - id: jaslin
       name: "Jaslin Barrera"

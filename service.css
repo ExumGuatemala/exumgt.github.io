@@ -178,3 +178,56 @@
   font-size: 0.95rem;
   line-height: 1.55;
 }
+
+/* Team profile pages (e.g. /equipo/kenny-barrera/) */
+.profile-hero {
+  background: #ffffff;
+  text-align: center;
+  padding: calc(var(--nav-height) + 56px) 24px 64px;
+}
+
+.profile-hero-content {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.profile-photo {
+  margin: 0 auto 24px;
+}
+
+.profile-hero h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  color: var(--color-gray);
+  margin-bottom: 6px;
+}
+
+.profile-hero .profile-role {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: var(--color-gray);
+  margin-bottom: 16px;
+}
+
+.profile-hero p {
+  font-size: 1.05rem;
+  color: var(--color-gray-soft);
+  margin-bottom: 28px;
+}
+
+.profile-text {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile-text p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-gray);
+  margin: 0 0 20px;
+}
+
+.profile-text p:last-child {
+  margin-bottom: 0;
+}
