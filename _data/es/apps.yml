@@ -1,0 +1,107 @@
+nav:
+  home: Inicio
+  included: "Qué incluye"
+  process: "Cómo funciona"
+  faq: Preguntas
+  contact: Contacto
+
+hero:
+  tag: Apps a medida
+  title: "Tu problema, resuelto con una app."
+  subtitle: "Cuéntanos qué le quita tiempo o dinero a tu negocio y construimos la app que lo resuelve, hecha a la medida de cómo trabajas. Nosotros nos encargamos de todo; tú solo la usas."
+  cta: "Quiero contarles mi problema"
+  whatsappMessage: "Hola, tengo un problema en mi negocio y quiero saber si una app lo puede resolver."
+
+projects:
+  title: "Apps que ya construimos"
+  subtitle: "Dos negocios distintos, dos problemas distintos. Lo que tienen en común: hoy trabajan mejor que antes."
+  resultLabel: "Resultado:"
+  items:
+    - industry: "Instalaciones y herrería"
+      title: "Del Excel a su propia app"
+      description: "Un negocio de instalaciones eléctricas, ventanas de PVC, puertas y techos de metal y vidrio templado llevaba todo en Excel. Construimos su app para manejar clientes, productos, cotizaciones, órdenes de trabajo, pagos y gastos."
+      result: "mucho tiempo ahorrado y, sobre todo, todo el equipo trabaja en la app, cada quien con los permisos que le corresponden."
+    - industry: "Plataforma de servicios"
+      title: "Una app rescatada"
+      description: "Una app para conectar a electricistas, fontaneros y pintores con clientes, al estilo de Uber, llegó a nosotros llena de errores. La revisamos, armamos un plan para corregirla y corregimos todo lo crítico."
+      result: "la app funciona, con usuarios, clientes, proveedores y pagos: una primera versión sólida de la idea, ya en marcha."
+
+included:
+  title: "Qué incluye"
+  subtitle: "No necesitas saber de tecnología. Necesitas que tu negocio funcione mejor."
+  technicalLabel: "Por ejemplo:"
+  items:
+    - title: "Hecha a tu forma de trabajar"
+      description: "No tienes que adaptarte a un programa genérico. La app se adapta a cómo ya trabaja tu negocio."
+      technical: "tus cotizaciones, tus órdenes de trabajo, tus reportes."
+    - title: "Todo en un solo lugar"
+      description: "Lo que hoy está repartido entre papeles, hojas de Excel y chats de WhatsApp queda ordenado en un solo lugar."
+      technical: "clientes, productos, pagos y gastos."
+    - title: "Tu equipo también la usa"
+      description: "Cada persona entra con su propio usuario y ve solo lo que le corresponde, así todos pueden trabajar en la app sin riesgos."
+      technical: "el vendedor cotiza, el técnico ve sus órdenes y tú ves todo."
+    - title: "Funciona en tu teléfono"
+      description: "Tu app funciona en la computadora, la tablet o el celular, desde cualquier lugar. Si tu proyecto lo necesita, también la publicamos en las tiendas de apps."
+      technical: "en el navegador, o en App Store y Google Play."
+    - title: "Nos encargamos de todo"
+      description: "La diseñamos, la construimos, la publicamos y la dejamos funcionando. Tú no tienes que entender cómo funciona por dentro."
+      technical: "servidores, base de datos y seguridad, de nuestra parte."
+    - title: "Es tuya"
+      description: "Al terminar, la app y todo lo necesario para que funcione quedan a tu nombre. No dependes de nadie para seguir usándola."
+      technical: "el código y las cuentas de los servidores."
+    - title: "Crece con tu negocio"
+      description: "Cuando tu negocio cambie, tu app también puede cambiar: le agregamos lo que necesites, cuando lo necesites."
+      technical: "nuevas secciones, reportes o permisos."
+    - title: "¿Ya tienes una app que no funciona?"
+      description: "Si alguien te hizo una app que falla o está a medias, la revisamos, te decimos qué está mal y la arreglamos."
+      technical: "apps hechas a la carrera o con IA sin experiencia."
+
+process:
+  title: "Cómo funciona"
+  subtitle: "Cuatro pasos, de tu problema a tu app funcionando."
+  steps:
+    - title: "Cuéntanos tu problema"
+      description: "Nos escribes por WhatsApp y nos cuentas cómo trabajas hoy y qué te gustaría resolver."
+    - title: "Te damos una cotización"
+      description: "Te decimos qué va a hacer tu app y cuánto cuesta el proyecto completo, antes de empezar."
+    - title: "Construimos tu app"
+      description: "La construimos contigo, para que quede como tu negocio la necesita."
+    - title: "La dejamos funcionando"
+      description: "Publicamos tu app y te la entregamos a tu nombre, lista para usar."
+
+followup:
+  title: "Después: tu app sigue creciendo"
+  subtitle: "Opcional. Sin mensualidades: pagas por hora solo cuando necesitas algo."
+  items:
+    - title: "Nuevas funciones"
+      description: "¿Tu negocio necesita algo nuevo? Se lo agregamos a tu app."
+    - title: "Ajustes y correcciones"
+      description: "Si algo deja de funcionar como esperabas, lo revisamos y lo arreglamos."
+    - title: "Ideas y consejos"
+      description: "Te ayudamos a decidir qué conviene mejorar primero en tu app."
+
+faq:
+  title: "Preguntas frecuentes"
+  items:
+    - question: "¿Necesito saber de tecnología?"
+      answer: "No. Tú conoces tu negocio y su problema; la tecnología es asunto nuestro. Te hablamos en palabras simples."
+    - question: "¿Qué tecnología usan?"
+      answer: "La que mejor resuelva tu problema. Lo importante no es la herramienta, sino que la app te haga la vida más fácil."
+    - question: "¿Qué tipo de apps hacen?"
+      answer: "Principalmente apps que se usan desde el navegador y funcionan en computadora, tablet y celular. Cuando el proyecto lo necesita, también hacemos apps para App Store y Google Play."
+    - question: "Ya tengo una app, pero no funciona bien. ¿Pueden ayudarme?"
+      answer: "Sí. La revisamos, te explicamos qué está mal y qué conviene arreglar primero, y la corregimos."
+    - question: "¿De quién es la app cuando la terminan?"
+      answer: "Tuya. El código y las cuentas de los servidores quedan a tu nombre."
+    - question: "¿Cuánto tiempo tarda?"
+      answer: "Depende del tamaño de la app. Cuando te cotizamos, te damos un estimado del tiempo."
+    - question: "¿Cuánto cuesta?"
+      answer: "Cotizamos cada proyecto según lo que tu app necesita hacer. Después de entregarla, los cambios y mejoras se cobran por hora. Escríbenos por WhatsApp y te damos una cotización sin compromiso."
+
+contact:
+  title: "¿Qué problema quieres resolver?"
+  subtitle: "Escríbenos y cuéntanos. Te decimos cómo una app puede ayudarte."
+  whatsappCta: "Escríbenos por WhatsApp"
+
+footer:
+  copyright: "© 2026 Exum. Todos los derechos reservados."

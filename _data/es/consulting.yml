@@ -16,6 +16,10 @@ approach:
   title: "Experiencia + IA: lo mejor de los dos"
   subtitle: "La inteligencia artificial es poderosa, pero solo si sabes qué preguntarle. Por eso combinamos las dos."
   items:
+    - title: "Experiencia + IA"
+      verdict: "Rápido y acertado"
+      description: "Experiencia construyendo software para hacer las preguntas correctas, y la IA para entender tu negocio y armar tu plan más rápido y más a fondo."
+      highlight: true
     - title: "Solo una persona"
       verdict: "Más lento e incompleto"
       description: "Una persona sola tarda más en entender tu negocio y es fácil que algo se le pase por alto."
@@ -25,10 +29,6 @@ approach:
     - title: "Alguien sin experiencia + IA"
       verdict: "Prueba y error"
       description: "Muchas vueltas, intentos y errores hasta dar con algo que funcione. Y ese tiempo lo pagas tú."
-    - title: "Experiencia + IA"
-      verdict: "Rápido y acertado"
-      description: "Experiencia construyendo software para hacer las preguntas correctas, y la IA para entender tu negocio y armar tu plan más rápido y más a fondo."
-      highlight: true
 
 included:
   title: "Qué incluye"

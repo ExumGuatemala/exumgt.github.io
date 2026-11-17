@@ -52,6 +52,12 @@ services:
       description: "Experiencia en tecnología + IA para armar contigo un plan claro: qué necesitas, en qué orden y con qué herramientas."
       href: /servicios/consultoria/
       visible: true
+    - id: apps
+      tag: Apps a medida
+      title: "Tu problema, resuelto con una app"
+      description: "Cuéntanos qué le quita tiempo o dinero a tu negocio y construimos la app que lo resuelve, hecha a tu medida."
+      href: /servicios/apps-a-medida/
+      visible: true
 
 why:
   title: "Cómo y por qué lo hacemos"

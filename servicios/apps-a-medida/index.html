@@ -1,0 +1,134 @@
+---
+layout: default
+lang: es
+page_key: apps
+title: "Apps a medida para negocios: tu problema, resuelto con una app | Exum"
+description: "Cuéntanos el problema de tu negocio y construimos la app que lo resuelve, a tu medida y a tu nombre. También revisamos y arreglamos apps que no funcionan."
+image: /images/exum/og-image.png
+hreflang_es: /servicios/apps-a-medida/
+hreflang_en: /en/services/custom-apps/
+lang_switch_url: /en/services/custom-apps/
+lang_switch_label: EN
+home_url: /
+jsonld: service
+service_type: "Custom software development"
+stylesheet: /service.css
+permalink: /servicios/apps-a-medida/
+---
+{% assign t = site.data[page.lang][page.page_key] %}
+{% assign whatsapp_href = "https://wa.me/" | append: site.company.whatsapp | append: "?text=" | append: t.hero.whatsappMessage | uri_escape %}
+
+<header id="inicio" class="hero">
+  <div class="hero-content">
+    <span class="service-tag">{{ t.hero.tag }}</span>
+    <h1>{{ t.hero.title }}</h1>
+    <p>{{ t.hero.subtitle }}</p>
+    <a href="{{ whatsapp_href }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="hero_apps">{{ t.hero.cta }}</a>
+  </div>
+</header>
+
+<section id="proyectos" class="svc-section" aria-labelledby="proyectos-title">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2 id="proyectos-title">{{ t.projects.title }}</h2>
+      <p>{{ t.projects.subtitle }}</p>
+    </div>
+
+    <div class="svc-grid svc-grid-2">
+      {% for item in t.projects.items %}
+      <article class="svc-card">
+        <span class="svc-verdict">{{ item.industry }}</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <p class="svc-technical"><strong>{{ t.projects.resultLabel }}</strong> {{ item.result }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="que-incluye" class="svc-section svc-section-alt" aria-labelledby="que-incluye-title">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2 id="que-incluye-title">{{ t.included.title }}</h2>
+      <p>{{ t.included.subtitle }}</p>
+    </div>
+
+    <div class="svc-grid">
+      {% for item in t.included.items %}
+      <article class="svc-card">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <p class="svc-technical"><strong>{{ t.included.technicalLabel }}</strong> {{ item.technical }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona" class="svc-section" aria-labelledby="como-funciona-title">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2 id="como-funciona-title">{{ t.process.title }}</h2>
+      <p>{{ t.process.subtitle }}</p>
+    </div>
+
+    <ol class="svc-steps">
+      {% for step in t.process.steps %}
+      <li>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section id="acompanamiento" class="svc-section svc-section-alt" aria-labelledby="acompanamiento-title">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2 id="acompanamiento-title">{{ t.followup.title }}</h2>
+      <p>{{ t.followup.subtitle }}</p>
+    </div>
+
+    <div class="svc-grid svc-grid-3">
+      {% for item in t.followup.items %}
+      <article class="svc-card">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="preguntas" class="svc-section" aria-labelledby="preguntas-title">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2 id="preguntas-title">{{ t.faq.title }}</h2>
+    </div>
+
+    <div class="svc-faq">
+      {% for item in t.faq.items %}
+      <details>
+        <summary>{{ item.question }}</summary>
+        <p>{{ item.answer }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact">
+  <div class="section-inner">
+    <div class="section-heading">
+      <h2>{{ t.contact.title }}</h2>
+      <p>{{ t.contact.subtitle }}</p>
+    </div>
+
+    <div class="contact-actions">
+      <a href="{{ whatsapp_href }}" class="cta-button" target="_blank" rel="noopener" data-evento="clic_whatsapp" data-ubicacion="contacto_apps">{{ t.contact.whatsappCta }}</a>
+      <a href="mailto:{{ site.company.email }}" class="contact-email" data-evento="clic_email" data-ubicacion="contacto_apps">{{ site.company.email }}</a>
+    </div>
+  </div>
+</section>

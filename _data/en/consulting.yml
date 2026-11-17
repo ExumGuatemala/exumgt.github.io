@@ -16,6 +16,10 @@ approach:
   title: "Experience + AI: the best of both"
   subtitle: "Artificial intelligence is powerful, but only if you know what to ask. That's why we combine the two."
   items:
+    - title: "Experience + AI"
+      verdict: "Fast and on target"
+      description: "Experience building software to ask the right questions, and AI to understand your business and build your plan faster and more thoroughly."
+      highlight: true
     - title: "A person alone"
       verdict: "Slower and incomplete"
       description: "One person alone takes longer to understand your business, and it's easy to miss something."
@@ -25,10 +29,6 @@ approach:
     - title: "Someone inexperienced + AI"
       verdict: "Trial and error"
       description: "Lots of back and forth, attempts, and mistakes before landing on something that works. And you pay for that time."
-    - title: "Experience + AI"
-      verdict: "Fast and on target"
-      description: "Experience building software to ask the right questions, and AI to understand your business and build your plan faster and more thoroughly."
-      highlight: true
 
 included:
   title: "What's included"

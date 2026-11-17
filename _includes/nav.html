@@ -30,7 +30,7 @@
     {% elsif page.page_key == "igroom" %}
     <a href="#funciones">{{ t.nav.features }}</a>
     <a href="#precios">{{ t.nav.pricing }}</a>
-    {% elsif page.page_key == "seo" or page.page_key == "consulting" %}
+    {% elsif page.jsonld == "service" %}
     <a href="#que-incluye">{{ t.nav.included }}</a>
     <a href="#como-funciona">{{ t.nav.process }}</a>
     <a href="#preguntas">{{ t.nav.faq }}</a>

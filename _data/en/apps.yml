@@ -1,0 +1,107 @@
+nav:
+  home: Home
+  included: "What's included"
+  process: "How it works"
+  faq: FAQ
+  contact: Contact
+
+hero:
+  tag: Custom apps
+  title: "Your problem, solved with an app."
+  subtitle: "Tell us what's costing your business time or money and we'll build the app that solves it, made to fit the way you work. We take care of everything; you just use it."
+  cta: "I want to tell you my problem"
+  whatsappMessage: "Hi, I have a problem in my business and I'd like to know if an app can solve it."
+
+projects:
+  title: "Apps we've built"
+  subtitle: "Two different businesses, two different problems. What they have in common: they work better today than before."
+  resultLabel: "Result:"
+  items:
+    - industry: "Installations and metalwork"
+      title: "From Excel to their own app"
+      description: "A business doing electrical installations, PVC windows, metal doors and roofs, and tempered glass was running everything in Excel. We built their app to manage clients, products, quotes, work orders, payments, and expenses."
+      result: "a lot of time saved and, above all, the whole team works in the app, each person with the permissions they need."
+    - industry: "Services marketplace"
+      title: "An app, rescued"
+      description: "An app connecting electricians, plumbers, and painters with clients, Uber-style, came to us full of errors. We reviewed it, built a plan to fix it, and fixed everything critical."
+      result: "the app works, with users, clients, providers, and payments: a solid first version of the idea, up and running."
+
+included:
+  title: "What's included"
+  subtitle: "You don't need to know about technology. You need your business to run better."
+  technicalLabel: "For example:"
+  items:
+    - title: "Built around how you work"
+      description: "You don't have to adapt to a generic program. The app adapts to the way your business already works."
+      technical: "your quotes, your work orders, your reports."
+    - title: "Everything in one place"
+      description: "What's scattered today across paper, Excel sheets, and WhatsApp chats ends up organized in one place."
+      technical: "clients, products, payments, and expenses."
+    - title: "Your team uses it too"
+      description: "Each person logs in with their own user and sees only what they should, so everyone can work in the app safely."
+      technical: "sales quotes, technicians see their orders, and you see everything."
+    - title: "Works on your phone"
+      description: "Your app works on a computer, tablet, or phone, from anywhere. If your project needs it, we also publish it on the app stores."
+      technical: "in the browser, or on the App Store and Google Play."
+    - title: "We handle everything"
+      description: "We design it, build it, publish it, and leave it running. You don't need to understand how it works inside."
+      technical: "servers, database, and security, all on us."
+    - title: "It's yours"
+      description: "When we're done, the app and everything it needs to run are in your name. You don't depend on anyone to keep using it."
+      technical: "the code and the server accounts."
+    - title: "Grows with your business"
+      description: "When your business changes, your app can change too: we add what you need, when you need it."
+      technical: "new sections, reports, or permissions."
+    - title: "Already have an app that doesn't work?"
+      description: "If someone built you an app that breaks or was left half-done, we review it, tell you what's wrong, and fix it."
+      technical: "apps built in a rush, or with AI and no experience."
+
+process:
+  title: "How it works"
+  subtitle: "Four steps, from your problem to your app up and running."
+  steps:
+    - title: "Tell us your problem"
+      description: "Message us on WhatsApp and tell us how you work today and what you'd like to solve."
+    - title: "We send you a quote"
+      description: "We tell you what your app will do and what the whole project costs, before we start."
+    - title: "We build your app"
+      description: "We build it with you, so it turns out the way your business needs it."
+    - title: "We leave it running"
+      description: "We publish your app and hand it over in your name, ready to use."
+
+followup:
+  title: "After: your app keeps growing"
+  subtitle: "Optional. No monthly fees: you pay by the hour only when you need something."
+  items:
+    - title: "New features"
+      description: "Does your business need something new? We add it to your app."
+    - title: "Tweaks and fixes"
+      description: "If something stops working the way you expected, we look into it and fix it."
+    - title: "Ideas and advice"
+      description: "We help you decide what's worth improving first in your app."
+
+faq:
+  title: "Frequently asked questions"
+  items:
+    - question: "Do I need to know about technology?"
+      answer: "No. You know your business and its problem; the technology is our job. We talk in plain language."
+    - question: "What technology do you use?"
+      answer: "Whatever solves your problem best. What matters isn't the tool, it's that the app makes your life easier."
+    - question: "What kind of apps do you build?"
+      answer: "Mainly apps used from the browser that work on computers, tablets, and phones. When a project needs it, we also build apps for the App Store and Google Play."
+    - question: "I already have an app, but it doesn't work well. Can you help?"
+      answer: "Yes. We review it, explain what's wrong and what's worth fixing first, and fix it."
+    - question: "Who owns the app when it's done?"
+      answer: "You do. The code and the server accounts are in your name."
+    - question: "How long does it take?"
+      answer: "It depends on the size of the app. When we send you a quote, we include a time estimate."
+    - question: "How much does it cost?"
+      answer: "We quote each project based on what your app needs to do. After delivery, changes and improvements are billed by the hour. Message us on WhatsApp for a free, no-strings quote."
+
+contact:
+  title: "What problem do you want to solve?"
+  subtitle: "Message us and tell us about it. We'll tell you how an app can help."
+  whatsappCta: "Message us on WhatsApp"
+
+footer:
+  copyright: "© 2026 Exum. All rights reserved."

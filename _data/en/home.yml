@@ -52,6 +52,12 @@ services:
       description: "Technology experience + AI to build a clear plan with you: what you need, in what order, and with which tools."
       href: /en/services/consulting/
       visible: true
+    - id: apps
+      tag: Custom apps
+      title: "Your problem, solved with an app"
+      description: "Tell us what's costing your business time or money and we'll build the app that solves it, made to fit."
+      href: /en/services/custom-apps/
+      visible: true
 
 why:
   title: "How and why we build"
